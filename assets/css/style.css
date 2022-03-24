@@ -1,0 +1,42 @@
+section {
+  padding: 40px 0;
+}
+
+section .title {
+  font-size: 3rem;
+}
+
+section .subtitle {
+  font-size: 1.5rem;
+}
+
+article.card h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 10px 0 0;
+}
+
+article.card img {
+  width: 100%;
+}
+
+.about-us img {
+  max-width: 100%;
+}
+
+.membros .mantenedor-diamante {
+  max-width: 250px;
+}
+
+.membros .mantenedor-master {
+  max-width: 200px;
+}
+
+.membros .mantenedor-senior {
+  max-width: 150px;
+}
+
+.membros .mantenedor-apoiador {
+  max-width: 100px;
+}
+/*# sourceMappingURL=style.css.map */

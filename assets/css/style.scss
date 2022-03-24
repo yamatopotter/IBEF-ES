@@ -1,0 +1,47 @@
+// Configuração Global
+section{
+    padding: 40px 0;
+
+    .title{
+        font-size:3rem;
+    }
+    .subtitle{
+        font-size: 1.5rem;
+    }
+}
+
+// Card de notícias do index
+article.card{
+    h1{
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 10px 0 0;
+    }
+
+    img{
+        width:100%;
+    }
+}
+
+// Sobre nós
+.about-us
+{
+    img{
+        max-width: 100%;
+    }
+}
+
+.membros{
+    .mantenedor-diamante{
+        max-width:250px;
+    }
+    .mantenedor-master{
+        max-width: 200px;
+    }
+    .mantenedor-senior{
+        max-width: 150px;
+    }
+    .mantenedor-apoiador{
+        max-width:100px;
+    }
+}
