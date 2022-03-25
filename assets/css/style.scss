@@ -1,25 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
 // Configuração Global
+body{
+    font-family: 'Poppins', sans-serif;
+    h1, h2, h3{
+        font-family: 'Noto Serif', serif;
+    }
+}
+
 section{
     padding: 40px 0;
 
-    .title{
+    .title, .title-intro{
         font-size:3rem;
+        margin-bottom: 40px;
     }
     .subtitle{
         font-size: 1.5rem;
     }
+
+    .title{
+        &::before{
+            content:'';
+            position: relative;
+            bottom: 15px;
+            display: inline-block;
+            width:40px;
+            height:2px;
+            margin-right: 10px;
+            background-color: #328698;
+        }     
+    }
 }
 
-// Card de notícias do index
+.btn-more{
+    display: block;
+    margin: 40px auto 0;
+    width: fit-content;
+}
+
+// Card de notícias do index 
 article.card{
+
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
     h1{
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
         font-size: 1.2rem;
         text-align: center;
-        padding: 10px 0 0;
+        padding: 10px 10px 0;
     }
 
     img{
         width:100%;
+    }
+
+    p{
+        padding: 0 10px;
+    }
+}
+
+// Navbar
+
+header{
+    .logo-header{
+        display: block;
+        margin: 0 auto;
+        padding: 10px 0;
+        filter: invert(100%);
+    }
+
+    nav{
+        padding: 15px 0;
+    }
+
+    .navbar-color{
+        background-color: #328698;
+    }
+}
+
+// Intro
+.intro{
+    height:400px;
+    color: #ececec;
+}
+
+// Ultimas Noticias
+.latest-news{
+    a{
+        text-decoration: none;
+    }
+}
+
+// Eventos
+.events{
+    .calendar{
+        position: absolute;
+        right:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .day{
+            background-color:#d91e18;
+            font-size: 2rem;
+            padding: 10px;
+            color: #efefef;
+        }
+        .month{
+            background: #efefef;
+            width:100%;
+            text-align: center;
+        }
     }
 }
 
@@ -27,11 +121,11 @@ article.card{
 .about-us
 {
     img{
-        max-width: 100%;
+        width: 100%;
     }
 }
 
-.membros{
+.members{
     .mantenedor-diamante{
         max-width:250px;
     }

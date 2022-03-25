@@ -19,30 +19,61 @@
 
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Estilos Mutáveis -->
+    <style>
+        .intro{
+            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('./assets/img/bg.jpg') no-repeat center center/cover;
+        }
+        .latest-news .card a{
+            color: #0a0a0a;
+            font-weight: bold;
+        }
+    </style>
     <title>IBEF-ES</title>
 </head>
 <body>
     <header>
-        <img src='./assets/img/logo-ibef.png'>
-        <nav>
-            <ul>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-                <li>opcao do menu</li>
-            </ul>
+
+        <img src='./assets/img/logo-ibef.png' class="logo-header">
+
+        <nav class="navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="main-navbar">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
+                    </ul>
+    
+                </div>
+
+            </div>
+
         </nav>
     </header>
 
     <main>
         <section class="intro">
             <div class="container">
-                <h1 class="title">Novo site do IBEF</h1>
+                <div class="col-5">
+
+                    <h1 class="title-intro">Novo site do IBEF</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, atque inventore? Iusto, deserunt ipsum, numquam ab illo eligendi dolores blanditiis eveniet explicabo eum quasi repellat consequuntur reiciendis, omnis recusandae saepe.</p>
+                    <a href="" class="btn btn-primary">Texto do botão</a>
+
+                </div>
             </div>
         </section>
 
@@ -53,14 +84,14 @@
 
                 <div class="row">
 
-                    <div class="col-4">
+                    <div class="col-6">
                         <img src="./assets/img/about-us.jpg" alt="">
                     </div>
         
                     <div class="col-6">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quas sapiente deserunt aliquid libero repudiandae eaque, ducimus natus officia explicabo illum quaerat illo vel obcaecati accusamus fugit doloremque vitae. Culpa obcaecati sed soluta beatae, suscipit, quas laborum ex maxime recusandae voluptates facilis veritatis quaerat doloribus?</p>
         
-                        <a href="" class="btn">Saiba mais</a>
+                        <a href="" class="btn btn-primary">Saiba mais</a>
                     </div>
 
                 </div>
@@ -118,24 +149,32 @@
 
                 </div>
 
-                <a href="" class="btn btn-success">Ver outras matérias</a>
+                <a href="" class="btn btn-primary btn-more">Ver outras matérias</a>
 
             </div>
         </section>
 
-        <section class="eventos">
+        <section class="events">
             <div class="container">
 
-                <h1>Fique por dentro dos nossos eventos</h1>
+                <h1 class="title">Fique por dentro dos nossos eventos</h1>
                
-                <div class="row">
+                <div class="row news-card-list">
     
                     <div class="col-3">
     
                         <article class="card">
-                            <img src="./assets/img/event.jpg" alt="" class="news-pic">    
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
                             <h1>Titulo do evento</h1>    
-                            <a href="" class="btn btn-success">Ver Mais</a>        
+                            <a href="" class="btn btn-danger">Ver Mais</a>        
                         </article>
     
                     </div>
@@ -143,9 +182,17 @@
                     <div class="col-3">
     
                         <article class="card">
-                            <img src="./assets/img/event.jpg" alt="" class="news-pic">    
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
                             <h1>Titulo do evento</h1>    
-                            <a href="" class="btn btn-success">Ver Mais</a>        
+                            <a href="" class="btn btn-danger">Ver Mais</a>        
                         </article>
     
                     </div>
@@ -153,9 +200,17 @@
                     <div class="col-3">
     
                         <article class="card">
-                            <img src="./assets/img/event.jpg" alt="" class="news-pic">    
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
                             <h1>Titulo do evento</h1>    
-                            <a href="" class="btn btn-success">Ver Mais</a>        
+                            <a href="" class="btn btn-danger">Ver Mais</a>        
                         </article>
     
                     </div>
@@ -163,19 +218,29 @@
                     <div class="col-3">
     
                         <article class="card">
-                            <img src="./assets/img/event.jpg" alt="" class="news-pic">    
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
                             <h1>Titulo do evento</h1>    
-                            <a href="" class="btn btn-success">Ver Mais</a>        
+                            <a href="" class="btn btn-danger">Ver Mais</a>        
                         </article>
     
                     </div>
     
                 </div>
 
+                <a href="" class="btn btn-primary btn-more">Veja outros eventos</a>
+
             </div>
         </section>
 
-        <section class="membros">
+        <section class="members">
             <div class="container">
 
                 <h1 class="title">Mantenedores do IBEF-ES</h1>
@@ -221,8 +286,12 @@
             </div>
         </section>
 
-        <section class="contato">
-            <h1 class="title">Contato</h1>
+        <section class="contact">
+            <div class="container">
+
+                <h1 class="title">Contato</h1>
+
+            </div>
 
 
         </section>
