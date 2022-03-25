@@ -11,6 +11,10 @@ section {
   padding: 40px 0;
 }
 
+section:last-child {
+  padding: 40px 0 0;
+}
+
 section .title, section .title-intro {
   font-size: 3rem;
   margin-bottom: 40px;
@@ -50,7 +54,7 @@ article.card h1 {
   font-weight: bold;
   font-size: 1.2rem;
   text-align: center;
-  padding: 10px 10px 0;
+  padding: 10px 20px 0;
 }
 
 article.card img {
@@ -58,7 +62,7 @@ article.card img {
 }
 
 article.card p {
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 header .logo-header {
@@ -69,8 +73,21 @@ header .logo-header {
           filter: invert(100%);
 }
 
+header .logo-header.fixed-menu {
+  margin-bottom: 70px;
+}
+
 header nav {
   padding: 15px 0;
+}
+
+header nav.fixed-menu {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 header .navbar-color {
@@ -80,6 +97,26 @@ header .navbar-color {
 .intro {
   height: 400px;
   color: #ececec;
+}
+
+.about-us img {
+  width: 100%;
+}
+
+.members .mantenedor-diamante {
+  max-width: 250px;
+}
+
+.members .mantenedor-master {
+  max-width: 200px;
+}
+
+.members .mantenedor-senior {
+  max-width: 150px;
+}
+
+.members .mantenedor-apoiador {
+  max-width: 100px;
 }
 
 .latest-news a {
@@ -117,23 +154,54 @@ header .navbar-color {
   text-align: center;
 }
 
-.about-us img {
+.contact .google-map {
   width: 100%;
+  height: 300px;
+  margin-top: 20px;
 }
 
-.members .mantenedor-diamante {
-  max-width: 250px;
+.contact .col-4 {
+  text-align: center;
 }
 
-.members .mantenedor-master {
-  max-width: 200px;
+.contact .col-4 i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.members .mantenedor-senior {
-  max-width: 150px;
+.contact .col-4 p {
+  font-size: 1.2rem;
 }
 
-.members .mantenedor-apoiador {
-  max-width: 100px;
+.contact a {
+  color: #0a0a0a;
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: .9rem;
+}
+
+.contact a::after {
+  content: '';
+  display: block;
+  background: #0a0a0a;
+  width: 20px;
+  height: 1px;
+  margin: 10px auto 0;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.contact a:hover::after {
+  width: 80px;
+}
+
+footer {
+  background-color: #2f3741;
+  text-align: center;
+  color: #efefef;
+  padding: 20px 0;
 }
 /*# sourceMappingURL=style.css.map */
