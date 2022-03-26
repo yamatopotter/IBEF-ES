@@ -3,9 +3,14 @@
 // Configuração Global
 body{
     font-family: 'Poppins', sans-serif;
+    color: #3A3A3A;
     h1, h2, h3{
         font-family: 'Noto Serif', serif;
     }
+}
+
+h1{
+    font-size: 3rem;
 }
 
 section{
@@ -206,4 +211,112 @@ footer{
     text-align: center;
     color: #efefef;
     padding: 20px 0;
+}
+
+// ----------------------------------------------PÁGINAS INTERNAS ---------------------------------------------------
+
+.intern-title{
+    background-color:#13175E;
+    color: #efefef;
+
+    h1{
+        &::after{
+            content:'';
+            position: relative;
+            bottom: 10px;
+            display: inline-block;
+            width:40px;
+            height:2px;
+            margin-left: 10px;
+            background-color: #328698;
+        }
+    }
+}
+
+
+
+.board-specified{
+
+    h2{
+        margin-bottom: 20px;
+    }
+
+    .board-data{
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+        align-items: center;
+        margin-bottom: 20px;
+        color: #6c7a89;
+        transition: .3s ease all;
+
+        .name-person{
+            font-weight: bold;
+        }
+
+        &:hover{
+            color: #2f3741;
+        }
+    }
+
+    .board-pic{
+        width:180px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+
+    padding:40px 0;
+    &:first-child{
+        padding: 0 0 40px;
+    }
+    &:nth-child(even){
+        background-color:  	#ececec;
+    }
+
+}
+
+// ----------------------------------- SINGLE POST ---------------------------------------
+
+.post-title{
+    background-color:#13175E;
+    color: #efefef;
+    .post-category{
+        margin-bottom: 20px;
+        display: block;
+        background-color:#0d1388;
+        text-transform: uppercase;
+        width: fit-content;
+        padding: 10px
+    }
+}
+
+.post-data
+{
+    padding: 20px 0 0 !important;
+    display: flex;
+    flex-flow: column;
+    color: #6c7a89;
+    padding: 0;
+    font-size: .8rem;
+    gap: 5px;
+    &>*{
+        margin: 0;
+    }
+}
+
+.post-content{
+    padding: 20px 0 40px;
+
+    .main-pic{
+        width: 80%;
+        margin: 0 auto 20px;
+        display: block;
+    }
+    .post-text{
+        margin: 0 auto;
+        max-width:800px;
+        color: #6A6A6A;
+        line-height: 1.6rem;
+    }
 }
