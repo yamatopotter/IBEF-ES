@@ -179,7 +179,21 @@ header{
 }
 
 // Eventos
-.events{
+.events, .event-list{
+
+    .event-card-list{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        .card{
+            max-width: 300px;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     .calendar{
         position: absolute;
         right:0;
@@ -403,4 +417,10 @@ footer{
         display: flex;
         justify-content: space-between;
     }
+}
+
+// ---------------------- SINGLE EVENT -------------------
+
+.event-pic{
+    width:100%;
 }

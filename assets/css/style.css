@@ -168,7 +168,28 @@ header .navbar-color {
   text-decoration: none;
 }
 
-.events .calendar {
+.events .event-card-list, .event-list .event-card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.events .event-card-list .card, .event-list .event-card-list .card {
+  max-width: 300px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.events .calendar, .event-list .calendar {
   position: absolute;
   right: 0;
   display: -webkit-box;
@@ -186,14 +207,14 @@ header .navbar-color {
           align-items: center;
 }
 
-.events .calendar .day {
+.events .calendar .day, .event-list .calendar .day {
   background-color: #d91e18;
   font-size: 2rem;
   padding: 10px;
   color: #efefef;
 }
 
-.events .calendar .month {
+.events .calendar .month, .event-list .calendar .month {
   background: #efefef;
   width: 100%;
   text-align: center;
@@ -413,5 +434,9 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.event-pic {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
