@@ -9,6 +9,13 @@ body{
     }
 }
 
+// CORES
+
+$link: #252958;
+$link-active: #0f0ade;
+$grey: #6c7a89;
+$darker-grey: #2f3741;
+
 h1{
     font-size: 3rem;
 }
@@ -46,6 +53,39 @@ section{
     display: block;
     margin: 40px auto 0;
     width: fit-content;
+}
+
+.btn-link{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    width: fit-content; 
+    transition: .3s ease all;   
+    color:$link;
+    .bi-arrow-left{
+        margin-right: 10px;
+    }
+    .bi-arrow-right{
+        margin-left: 10px;
+    }
+
+    &::before, &::after{
+        content: '';
+        display: block;
+        height: 2px;
+        width: 30px;
+        margin: 0 auto;
+        background-color: $link;
+        transition: .3s ease all; 
+    }
+
+    &:hover{
+        color: $link-active;
+    }
+    &:hover::before, &:hover::after{
+        width: 100%;
+        background-color: $link-active;
+    }
 }
 
 // Cards do index
@@ -318,5 +358,49 @@ footer{
         max-width:800px;
         color: #6A6A6A;
         line-height: 1.6rem;
+    }
+}
+
+// ----------------------- ARCHIVE --------------------
+
+.post-list
+{
+    h1{
+        font-size: 1.25rem;
+        margin-bottom: 10px
+    }
+
+    .post-info{
+        display: flex;
+        flex-direction: column;
+        color: #6c7a89;
+        font-size: .8rem;
+        margin-bottom:10px;
+    }
+
+    .main-pic{
+        width: 100%;
+    }
+
+    .btn-link{
+        padding: 0;
+        display: block;
+        margin-top: 10px;
+    }
+
+    .div-post{
+        border-top: 1px dashed $grey;
+        margin:20px 0;
+        width:100%;
+        &:last-child{
+            margin: 20px 0 0;
+        }
+    }
+}
+
+.post-navigation{
+    .row{
+        display: flex;
+        justify-content: space-between;
     }
 }
