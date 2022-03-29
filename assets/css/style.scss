@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 // Configuração Global
 body{
@@ -15,6 +15,7 @@ $link: #252958;
 $link-active: #0f0ade;
 $grey: #6c7a89;
 $darker-grey: #2f3741;
+$special-blue: #328698;
 
 h1{
     font-size: 3rem;
@@ -44,24 +45,30 @@ section{
             width:40px;
             height:2px;
             margin-right: 10px;
-            background-color: #328698;
+            background-color: $special-blue;
         }     
     }
 }
 
-.btn-more{
-    display: block;
-    margin: 40px auto 0;
-    width: fit-content;
+.button-more{
+    margin-top: 40px;
 }
 
 .btn-link{
     display: inline-block;
     text-decoration: none;
     padding: 10px;
+}
+
+.link{
+    margin: 0 auto 10px; 
+}
+
+.btn-link, .link{
     width: fit-content; 
     transition: .3s ease all;   
     color:$link;
+
     .bi-arrow-left{
         margin-right: 10px;
     }
@@ -69,10 +76,10 @@ section{
         margin-left: 10px;
     }
 
-    &::before, &::after{
+    &::after{
         content: '';
         display: block;
-        height: 2px;
+        height: 1px;
         width: 30px;
         margin: 0 auto;
         background-color: $link;
@@ -82,32 +89,52 @@ section{
     &:hover{
         color: $link-active;
     }
-    &:hover::before, &:hover::after{
+    &:hover::after{
         width: 100%;
         background-color: $link-active;
     }
 }
 
 // Cards do index
-article.card{
-
-    border: none;
+.card{
+    padding: 0;
+    border:0;
+    border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
+    max-width: 30%;
     h1{
         font-family: 'Poppins', sans-serif;
-        font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
         text-align: center;
-        padding: 10px 20px 0;
+        padding: 10px 10px 0;
+        margin: 0;
+
+        &::after{
+            content:'';
+            display: block;
+            width: 100%;
+            height:1px;
+            background-color: $grey;
+            margin: 10px 0;
+        }
     }
 
     img{
         width:100%;
+        border-radius: 10px 10px 0 0;
     }
 
     p{
-        padding: 0 20px;
+        padding: 0 10px;
+        color: $grey;
+        height: 100%;
+    }
+}
+
+@media (max-width:990px){
+    .card{
+        max-width: 40%;
     }
 }
 
@@ -173,6 +200,11 @@ header{
 
 // Ultimas Noticias
 .latest-news{
+    .latest-news-list{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
     a{
         text-decoration: none;
     }
@@ -180,17 +212,16 @@ header{
 
 // Eventos
 .events, .event-list{
-
     .event-card-list{
         display: flex;
         gap: 20px;
         justify-content: center;
-
-        .card{
-            max-width: 300px;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
+        h1{
+            height: 100%;
+            margin-bottom: 20px;
+            &::after{
+                display: none;
+            }
         }
     }
 
@@ -212,6 +243,10 @@ header{
             width:100%;
             text-align: center;
         }
+    }
+
+    .link{
+        padding-top: 0;
     }
 }
 

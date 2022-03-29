@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap");
 body {
   font-family: 'Poppins', sans-serif;
   color: #3A3A3A;
@@ -40,18 +40,21 @@ section .title::before {
   background-color: #328698;
 }
 
-.btn-more {
-  display: block;
-  margin: 40px auto 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.button-more {
+  margin-top: 40px;
 }
 
 .btn-link {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
+}
+
+.link {
+  margin: 0 auto 10px;
+}
+
+.btn-link, .link {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -60,18 +63,18 @@ section .title::before {
   color: #252958;
 }
 
-.btn-link .bi-arrow-left {
+.btn-link .bi-arrow-left, .link .bi-arrow-left {
   margin-right: 10px;
 }
 
-.btn-link .bi-arrow-right {
+.btn-link .bi-arrow-right, .link .bi-arrow-right {
   margin-left: 10px;
 }
 
-.btn-link::before, .btn-link::after {
+.btn-link::after, .link::after {
   content: '';
   display: block;
-  height: 2px;
+  height: 1px;
   width: 30px;
   margin: 0 auto;
   background-color: #252958;
@@ -79,35 +82,57 @@ section .title::before {
   transition: .3s ease all;
 }
 
-.btn-link:hover {
+.btn-link:hover, .link:hover {
   color: #0f0ade;
 }
 
-.btn-link:hover::before, .btn-link:hover::after {
+.btn-link:hover::after, .link:hover::after {
   width: 100%;
   background-color: #0f0ade;
 }
 
-article.card {
-  border: none;
+.card {
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  max-width: 30%;
 }
 
-article.card h1 {
+.card h1 {
   font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
   text-align: center;
-  padding: 10px 20px 0;
+  padding: 10px 10px 0;
+  margin: 0;
 }
 
-article.card img {
+.card h1::after {
+  content: '';
+  display: block;
   width: 100%;
+  height: 1px;
+  background-color: #6c7a89;
+  margin: 10px 0;
 }
 
-article.card p {
-  padding: 0 20px;
+.card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card p {
+  padding: 0 10px;
+  color: #6c7a89;
+  height: 100%;
+}
+
+@media (max-width: 990px) {
+  .card {
+    max-width: 40%;
+  }
 }
 
 header .logo-header {
@@ -164,6 +189,16 @@ header .navbar-color {
   max-width: 100px;
 }
 
+.latest-news .latest-news-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .latest-news a {
   text-decoration: none;
 }
@@ -178,15 +213,13 @@ header .navbar-color {
           justify-content: center;
 }
 
-.events .event-card-list .card, .event-list .event-card-list .card {
-  max-width: 300px;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.events .event-card-list h1, .event-list .event-card-list h1 {
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.events .event-card-list h1::after, .event-list .event-card-list h1::after {
+  display: none;
 }
 
 .events .calendar, .event-list .calendar {
@@ -218,6 +251,10 @@ header .navbar-color {
   background: #efefef;
   width: 100%;
   text-align: center;
+}
+
+.events .link, .event-list .link {
+  padding-top: 0;
 }
 
 .contact .google-map {
