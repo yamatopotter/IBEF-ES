@@ -16,6 +16,8 @@ $link-active: #0f0ade;
 $grey: #6c7a89;
 $darker-grey: #2f3741;
 $special-blue: #328698;
+$white: #efefef;
+$darker-white:#ecf0f1;
 
 h1{
     font-size: 3rem;
@@ -62,6 +64,19 @@ section{
 
 .link{
     margin: 0 auto 10px; 
+}
+
+.link-light{
+    color: $darker-white !important;
+    &:hover{
+        color: $white !important;
+    } 
+    &::after{
+        background-color: $darker-white !important;
+    }
+    &:hover::after{
+        background-color: $white !important;
+    }
 }
 
 .btn-link, .link{

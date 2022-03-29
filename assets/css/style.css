@@ -54,6 +54,22 @@ section .title::before {
   margin: 0 auto 10px;
 }
 
+.link-light {
+  color: #ecf0f1 !important;
+}
+
+.link-light:hover {
+  color: #efefef !important;
+}
+
+.link-light::after {
+  background-color: #ecf0f1 !important;
+}
+
+.link-light:hover::after {
+  background-color: #efefef !important;
+}
+
 .btn-link, .link {
   width: -webkit-fit-content;
   width: -moz-fit-content;
