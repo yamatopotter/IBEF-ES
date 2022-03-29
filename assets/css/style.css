@@ -475,4 +475,12 @@ footer {
 .event-pic {
   width: 100%;
 }
+
+.event-data .btn-link {
+  padding: 0px 10px 10px 0px;
+}
+
+.gallery-content .thumbnail {
+  max-width: 150px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,9 @@
 
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/plugins/lightGallery/css/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
 
     <!-- Estilos Mutáveis -->
     <style>
@@ -72,49 +74,31 @@
             <div class="container">
 
                 <span class="post-category">
-                    Evento
+                    Galeria de Fotos
                 </span>
 
-                <h1>Titulo do evento que pode ser relativamente grande</h1>
+                <h1>Titulo da galeria de fotos</h1>
 
             </div>
 
         </section>
 
-        <section class="event-data">
-            
+        <section class="gallery-content">
+
             <div class="container">
 
-                <div class="row event-card-list">
-
-                    <div class="col-6">
-                        <h2>Data</h2>
-                        <p>22/22/2222 às 99:99</p>
-
-                        <h2>Local</h2>
-                        <p>Local do evento </p>
-
-                        <h2>Tema</h2>
-                        <p>Segue aqui o tema do evento</p>
-
-                        <h2>Sobre o Evento</h2>
-                        <p>O que esperar do Brasil e do mundo em 2022? Está aí a pergunta para a qual dez em cada dez CEOs gostariam de ter a resposta. Não é para menos. Os impactos da pandemia, somados às eleições presidenciais e incertezas macroeconômicas já formam um desafio e tanto para os próximos doze meses e além. Ampliando a visão para outras regiões, os riscos cibernéticos e o futuro do trabalho tomam o centro das preocupações, especialmente em países desenvolvidos. Em um cenário de pouca previsibilidade, que poderia trazer uma postura mais conservadora de líderes, o que os executivos aguardam para o futuro?
-
-                            Vamos conhecer um pouco desse cenário!
-                            Esperamos por você no Encontro de Finanças!!</p>
-
-                        <h2>Inscrições</h2>
-                        <p>Para se increver no evento, clique no botão abaixo.</p>
-                        <a href="#" class="btn-link">Clique aqui para se inscrever no evento <i class="bi bi-arrow-up-right"></i></a>
-                    </div>
-
-                    <div class="col-6">
-                        <img src="./assets/img/event.gif" alt="" class="event-pic">
-                    </div>
-
+                <div id="lightgallery">
+                    <a href="./assets/img/gallery/1.jpg">
+                        <img alt="img1" src="./assets/img/gallery/1.jpg" class="thumbnail"/>
+                    </a>
+                    <a href="./assets/img/gallery/2.jpg">
+                        <img alt="img2" src="./assets/img/gallery/2.jpg" class="thumbnail"/>
+                    </a>
                 </div>
-    
-        </div>
+
+            </div>
+            
+        </section>
 
         <section class="contact">
 
@@ -155,7 +139,16 @@
     </footer>
 
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/plugins/lightGallery/lightgallery.min.js"></script>
+    <script src="js/plugins/lg-thumbnail.umd.js"></script>
+    <script src="js/plugins/lg-zoom.umd.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script type="text/javascript">
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            speed: 500
+        });
+    </script>
 
 </body>
 </html>
