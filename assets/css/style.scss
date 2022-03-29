@@ -101,7 +101,6 @@ section{
     border:0;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    max-width: 30%;
     h1{
         font-family: 'Poppins', sans-serif;
         font-size: 1rem;
@@ -200,11 +199,6 @@ header{
 
 // Ultimas Noticias
 .latest-news{
-    .latest-news-list{
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
     a{
         text-decoration: none;
     }
@@ -213,15 +207,17 @@ header{
 // Eventos
 .events, .event-list{
     .event-card-list{
-        display: flex;
-        gap: 20px;
-        justify-content: center;
         h1{
             height: 100%;
             margin-bottom: 20px;
             &::after{
                 display: none;
             }
+        }
+    }
+    .calendar-list{
+        article{
+            margin-bottom:20px;
         }
     }
 
@@ -321,8 +317,6 @@ footer{
         }
     }
 }
-
-
 
 .board-specified{
 

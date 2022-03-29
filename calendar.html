@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Reset CSS -->
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -23,16 +24,18 @@
 
     <!-- Estilos Mutáveis -->
     <style>
-        .intro{
-            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('./assets/img/bg.jpg') no-repeat center center/cover;
+        .intro {
+            background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('./assets/img/bg.jpg') no-repeat center center/cover;
         }
-        .latest-news .card a{
+
+        .latest-news .card a {
             color: #0a0a0a;
             font-weight: bold;
         }
     </style>
     <title>IBEF-ES</title>
 </head>
+
 <body>
     <header>
 
@@ -40,10 +43,11 @@
 
         <nav class="navbar-expand-lg navbar-light bg-light" id="main-menu">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
+                    aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-              
+
                 <div class="collapse navbar-collapse" id="main-navbar">
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -57,7 +61,7 @@
                         <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
                     </ul>
-    
+
                 </div>
 
             </div>
@@ -78,41 +82,12 @@
         </section>
 
         <section class="event-list">
-            
+
             <div class="container">
 
-                <div class="row event-card-list">
-    
-                        <article class="card">
+                <div class="row event-card-list calendar-list">
 
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento que é grande para o tamanho dos outros cards</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a> 
-
-                        </article>
-    
-    
-                        <article class="card">
-
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>           
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a> 
-
-                        </article>
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -123,38 +98,16 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
-                        </article>
-    
-                        <article class="card">
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento que é grande para o tamanho dos outros cards</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
 
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
                         </article>
 
-                        <article class="card">
+                    </div>
 
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
-                        </article>
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -165,10 +118,15 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
+
                         </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -179,22 +137,14 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
-                        </article><article class="card">
-
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
                         </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -205,10 +155,14 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
                         </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -219,10 +173,14 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
                         </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -233,10 +191,14 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
                         </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -247,10 +209,14 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>      
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
                         </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
 
                         <article class="card">
 
@@ -261,14 +227,105 @@
                                 <span class="month">Dez</span>
                             </div>
 
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class=" btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>      
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
                         </article>
-    
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
+
+                        <article class="card">
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
+                        </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
+
+                        <article class="card">
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
+                        </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
+
+                        <article class="card">
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
+                        </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
+
+                        <article class="card">
+
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>
+                        </article>
+
+                    </div>
+
+                    <div class="col-3 d-flex align-items-strech">
+
+                        <article class="card">
+                            <div class="calendar">
+                                <span class="day">
+                                    31
+                                </span>
+                                <span class="month">Dez</span>
+                            </div>
+
+                            <img src="./assets/img/event.gif" alt="" class="news-pic">
+                            <h1>Titulo do evento</h1>
+                            <a href="" class=" btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>
+                        </article>
+
+                    </div>
+
                 </div>
 
-                
+
             </div>
 
         </section>
@@ -313,7 +370,10 @@
 
             </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d935.5249127000653!2d-40.291654!3d-20.296142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x947a6d669fd60662!2sNaCapital%20Escrit%C3%B3rios%20%26%20Coworking!5e0!3m2!1spt-BR!2sbr!4v1648217561816!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d935.5249127000653!2d-40.291654!3d-20.296142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x947a6d669fd60662!2sNaCapital%20Escrit%C3%B3rios%20%26%20Coworking!5e0!3m2!1spt-BR!2sbr!4v1648217561816!5m2!1spt-BR!2sbr"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                class="google-map"></iframe>
 
         </section>
 
@@ -321,7 +381,7 @@
 
     <footer>
         <div class="container">
-           IBEF-ES 2022, Todos os direitos reservados.
+            IBEF-ES 2022, Todos os direitos reservados.
         </div>
     </footer>
 
@@ -329,4 +389,5 @@
     <script src="./assets/js/main.js"></script>
 
 </body>
+
 </html>

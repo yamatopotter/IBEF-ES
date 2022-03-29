@@ -97,7 +97,6 @@ section .title::before {
   border-radius: 10px;
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  max-width: 30%;
 }
 
 .card h1 {
@@ -189,28 +188,8 @@ header .navbar-color {
   max-width: 100px;
 }
 
-.latest-news .latest-news-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .latest-news a {
   text-decoration: none;
-}
-
-.events .event-card-list, .event-list .event-card-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .events .event-card-list h1, .event-list .event-card-list h1 {
@@ -220,6 +199,10 @@ header .navbar-color {
 
 .events .event-card-list h1::after, .event-list .event-card-list h1::after {
   display: none;
+}
+
+.events .calendar-list article, .event-list .calendar-list article {
+  margin-bottom: 20px;
 }
 
 .events .calendar, .event-list .calendar {
