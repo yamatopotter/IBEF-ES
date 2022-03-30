@@ -83,16 +83,36 @@
 
         </section>
 
+        <div class="container">
+            <section class="post-data">
+                <p class="date">
+                    Publicado 99/99/9999
+                </p>
+            </section>
+        </div>
+
         <section class="gallery-content">
 
             <div class="container">
 
-                <div id="lightgallery">
+                <div id="lightgallery" class="lightgallery">
                     <a href="./assets/img/gallery/1.jpg">
                         <img alt="img1" src="./assets/img/gallery/1.jpg" class="thumbnail"/>
                     </a>
                     <a href="./assets/img/gallery/2.jpg">
                         <img alt="img2" src="./assets/img/gallery/2.jpg" class="thumbnail"/>
+                    </a>
+                    <a href="./assets/img/gallery/3.jpg">
+                        <img alt="img2" src="./assets/img/gallery/3.jpg" class="thumbnail"/>
+                    </a>
+                    <a href="./assets/img/gallery/4.jpg">
+                        <img alt="img2" src="./assets/img/gallery/4.jpg" class="thumbnail"/>
+                    </a>
+                    <a href="./assets/img/gallery/5.jpg">
+                        <img alt="img2" src="./assets/img/gallery/5.jpg" class="thumbnail"/>
+                    </a>
+                    <a href="./assets/img/gallery/6.jpg">
+                        <img alt="img2" src="./assets/img/gallery/6.jpg" class="thumbnail"/>
                     </a>
                 </div>
 
@@ -139,14 +159,15 @@
     </footer>
 
     <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/plugins/lightGallery/lightgallery.min.js"></script>
-    <script src="js/plugins/lg-thumbnail.umd.js"></script>
-    <script src="js/plugins/lg-zoom.umd.js"></script>
+    <script src="./assets/plugins/lightGallery/lightgallery.umd.js"></script>
+    <script src="./assets/plugins/lightGallery/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="./assets/plugins/lightGallery/plugins/thumbnail/lg-thumbnail.umd.js"></script>
     <script src="./assets/js/main.js"></script>
     <script type="text/javascript">
         lightGallery(document.getElementById('lightgallery'), {
             plugins: [lgZoom, lgThumbnail],
-            speed: 500
+            speed: 500,
+            mode: 'fade',
         });
     </script>
 

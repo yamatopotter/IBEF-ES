@@ -477,7 +477,26 @@ footer{
 
 // ---------------------- GALLERY -----------------------
 .gallery-content{
-    .thumbnail{
-        max-width: 150px;
+
+    .lightgallery{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        .thumbnail{
+            opacity: .6;
+            max-width: 240px;
+            transition: .3s ease-in-out all;
+        }
+        a{
+            background-color: #fff;
+            text-decoration: none;
+            &:hover>.thumbnail{
+                opacity: 1;
+            }
+        }
+        
     }
+    
 }
