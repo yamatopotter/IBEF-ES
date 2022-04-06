@@ -23,21 +23,43 @@ section:last-child {
 section .title, section .title-intro {
   font-size: 3rem;
   margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
 }
 
 section .subtitle {
   font-size: 1.5rem;
 }
 
-section .title::before {
+section .title::before, section .title::after {
   content: '';
-  position: relative;
-  bottom: 15px;
-  display: inline-block;
   width: 40px;
   height: 2px;
-  margin-right: 10px;
   background-color: #328698;
+}
+
+@media (max-width: 992px) {
+  section .title, section .title-intro {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  section .title::before, section .title::after {
+    content: '';
+    display: none;
+  }
 }
 
 .button-more {
@@ -144,9 +166,9 @@ section .title::before {
   height: 100%;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 992px) {
   .card {
-    max-width: 40%;
+    margin-bottom: 20px;
   }
 }
 
@@ -184,8 +206,20 @@ header .navbar-color {
   color: #ececec;
 }
 
+@media (max-width: 992px) {
+  .intro {
+    height: auto;
+  }
+}
+
 .about-us img {
   width: 100%;
+}
+
+@media (max-width: 992px) {
+  .about-us img {
+    margin-bottom: 20px;
+  }
 }
 
 .members .mantenedor-diamante {
@@ -202,6 +236,12 @@ header .navbar-color {
 
 .members .mantenedor-apoiador {
   max-width: 100px;
+}
+
+@media (max-width: 992px) {
+  .members img {
+    margin-bottom: 20px;
+  }
 }
 
 .latest-news a {
