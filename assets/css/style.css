@@ -39,7 +39,8 @@ section .title, section .title-intro {
 }
 
 section .subtitle {
-  font-size: 1.25rem;
+  font-size: 1rem;
+  color: #6c7a89;
 }
 
 section .title::before {
