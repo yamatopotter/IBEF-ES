@@ -62,7 +62,6 @@ function register_my_menu() {
 add_action( 'init', 'register_my_menu' );
 
 // Corrigindo LI do menu
-
 function add_menu_link_class($atts, $item, $args)
 {
     $atts['class'] = 'nav-link';
