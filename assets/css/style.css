@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap");
-body {
+body.site {
   font-family: 'Poppins', sans-serif;
   color: #3A3A3A;
 }
 
-body h1, body h2, body h3 {
+body.site h1, body.site h2, body.site h3 {
   font-family: 'Noto Serif', serif;
 }
 

@@ -46,7 +46,7 @@
     </style>
     <title>IBEF-ES</title>
 </head>
-<body>
+<body class="site">
     <header>
 
         <img src='./assets/img/logo-ibef.png' class="logo-header" id="logo-header">
@@ -59,12 +59,10 @@
               
                 <div class="collapse navbar-collapse" id="main-navbar">
 
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <?php
-                            $args = array('menu_id' => 'main-nav','menu_class' => 'menu', 'menu' => 'principal', 'container' => false);
-                            wp_nav_menu($args);
-                        ?>
-                    </ul>
+                    <?php
+                        $args = array('menu_id' => 'main-nav','menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0', 'menu' => 'principal', 'container' => false);
+                        wp_nav_menu($args);
+                    ?>
     
                 </div>
 
