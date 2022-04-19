@@ -41,7 +41,7 @@
     <!-- Estilos Mutáveis -->
     <style>
         .intro{
-            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('./assets/img/bg.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('<?php returnThemeObject('bg_intro'); ?>') no-repeat center center/cover;
         }
     </style>
     <title>IBEF-ES</title>
@@ -49,7 +49,7 @@
 <body class="site">
     <header>
 
-        <img src='./assets/img/logo-ibef.png' class="logo-header" id="logo-header">
+        <img src='<?php returnThemeObject('logo_menu'); ?>' class="logo-header" id="logo-header">
 
         <nav class="navbar-expand-lg navbar-light bg-light" id="main-menu">
             <div class="container">

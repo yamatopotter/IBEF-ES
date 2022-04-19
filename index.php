@@ -5,11 +5,12 @@
             <div class="container">
                 <div class="col-12 col-lg-5">
 
-                    <h1 class="title-intro">Novo site do IBEF</h1>
-                    
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, atque inventore? Iusto, deserunt ipsum, numquam ab illo eligendi dolores blanditiis eveniet explicabo eum quasi repellat consequuntur reiciendis, omnis recusandae saepe.</p>
-                    <a href="" class="btn btn-link link-light">Texto do botão <i class="bi bi-arrow-right"></i></a>
+                    <h1 class="title-intro"><?php returnThemeObject('titulo_intro'); ?></h1>
+                    <p><?php returnThemeObject('texto_intro');?></p>
 
+                    <?php if(get_theme_mod('exibir_botao_intro')):?>
+                        <a href="<?php returnThemeObject('link_botao_intro'); ?>" class="btn btn-link link-light"><?php returnThemeObject('texto_botao_intro'); ?> <i class="bi bi-arrow-right"></i></a>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>
