@@ -178,7 +178,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Título do bloco sobre nós - TODO
     $wp_customize->add_setting(
-        'link_botao_intro',
+        'titulo_sobre_nos',
         array(
             'default' => '',
             'transport'=>'refresh'
@@ -187,18 +187,18 @@ function theme_customizer_settings( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Control(
         $wp_customize,
-        'link_botao_intro',
+        'titulo_sobre_nos',
         array(
-            'label'      => __( 'Link do botão da Introdução', 'link_botao_intro_label' ),
-            'settings'   => 'link_botao_intro',
-            'section'    => 'intro',
+            'label'      => __( 'Título do bloco sobre nós', 'titulo_sobre_nos_label' ),
+            'settings'   => 'titulo_sobre_nos',
+            'section'    => 'sobre_nos',
             'type'       => 'text'
         )
     ) );
 
-    // Texto do bloco sobre nós - TODO
+    // Texto do bloco sobre nós
     $wp_customize->add_setting(
-        'link_botao_intro',
+        'texto_sobre_nos',
         array(
             'default' => '',
             'transport'=>'refresh'
@@ -207,16 +207,37 @@ function theme_customizer_settings( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Control(
         $wp_customize,
-        'link_botao_intro',
+        'texto_sobre_nos',
         array(
-            'label'      => __( 'Link do botão da Introdução', 'link_botao_intro_label' ),
-            'settings'   => 'link_botao_intro',
+            'label'      => __( 'Texto do bloco sobre nós', 'texto_sobre_nos_label' ),
+            'settings'   => 'texto_sobre_nos',
             'section'    => 'intro',
-            'type'       => 'text'
+            'type'       => 'textarea'
         )
     ) );
 
     // Escolha da página
+
+    // Texto do bloco sobre nós
+    $wp_customize->add_setting(
+        'pagina_sobre_nos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'pagina_sobre_nos',
+        array(
+            'label'      => __( 'Texto do bloco sobre nós', 'pagina_sobre_nos_label' ),
+            'settings'   => 'pagina_sobre_nos',
+            'section'    => 'intro',
+            'type'       => 'textarea'
+        )
+    ) );
+
 
     $wp_customize->add_setting( 'cor_destaque',
     array(
