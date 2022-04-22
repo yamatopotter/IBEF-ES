@@ -3,6 +3,7 @@
     get_header();
     // query noticias posts
     $news_query = new WP_Query(array('post_type' => 'noticias' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
+    $events_query = new WP_Query(array('post_type' => 'eventos' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
 
 ?>
     <main class="main-index">
@@ -70,59 +71,7 @@
                
                 <div class="row event-card-list">
 
-                    <div class="col-12 col-lg-4 d-flex align-items-strech">
-
-                        <article class="card">
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-    
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class="btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
-                        </article>
-
-                    </div>
-
-                    <div class="col-12 col-lg-4 d-flex align-items-strech">
-
-                        <article class="card">
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-    
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento com duas linhas ou mais</h1>    
-                            <a href="" class="btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
-                        </article>
-
-                    </div>
-
-                    <div class="col-12 col-lg-4 d-flex align-items-strech">
-
-                        <article class="card">
-                            <div class="calendar">
-                                <span class="day">
-                                    31
-                                </span>
-                                <span class="month">Dez</span>
-                            </div>
-    
-                            <img src="./assets/img/event.gif" alt="" class="news-pic">    
-                            <h1>Titulo do evento</h1>    
-                            <a href="" class="btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
-                        </article>
-
-                    </div>
-    
-    
-
+                    <?php require_once('list-eventos.php'); ?>
     
                 </div>
 

@@ -112,4 +112,17 @@ function the_excerpt_30($length){
 }
 add_filter('excerpt_length', 'the_excerpt_30');
 
+function returnDateEvent($postId){
+    return date_format(date_create(get_post_meta($postId, '_event_date', true)), 'd');
+}
+
+function returnMonthEvent($postId){
+    return date_format(date_create(get_post_meta($postId, '_event_date', true)), 'M');
+}
+
+function returnFullDateEvent($postId){
+    return date_format(date_create(get_post_meta($postId, '_event_date', true)), 'd-m-Y');
+}
+
+
 ?>
