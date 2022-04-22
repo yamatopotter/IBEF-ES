@@ -176,7 +176,27 @@ function theme_customizer_settings( $wp_customize ) {
         'panel'    => 'front-page'
     ) );
 
-    // Título do bloco sobre nós - TODO
+    // Imagem de background Intro
+    $wp_customize->add_setting(
+        'img_sobre_nos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control(
+        $wp_customize,
+        'bg_intro',
+        array(
+            'label'      => __( 'Imagem do Sobre Nós', 'img_sobre_nos' ),
+            'settings'   => 'img_sobre_nos',
+            'section'    => 'sobre_nos',
+            'type'       => 'image'
+        )
+    ) );
+
+    //Título do bloco sobre nós ---------------
     $wp_customize->add_setting(
         'titulo_sobre_nos',
         array(
@@ -184,7 +204,7 @@ function theme_customizer_settings( $wp_customize ) {
             'transport'=>'refresh'
         )
     );
-
+    
     $wp_customize->add_control( new WP_Customize_Control(
         $wp_customize,
         'titulo_sobre_nos',
@@ -196,7 +216,27 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Texto do bloco sobre nós
+    //Subtítulo do bloco sobre nós ---------------
+    $wp_customize->add_setting(
+        'subtitulo_sobre_nos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_sobre_nos',
+        array(
+            'label'      => __( 'Subtítulo do bloco sobre nós', 'subtitulo_sobre_nos_label' ),
+            'settings'   => 'subtitulo_sobre_nos',
+            'section'    => 'sobre_nos',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Texto do bloco sobre nós ------------------
     $wp_customize->add_setting(
         'texto_sobre_nos',
         array(
@@ -211,14 +251,12 @@ function theme_customizer_settings( $wp_customize ) {
         array(
             'label'      => __( 'Texto do bloco sobre nós', 'texto_sobre_nos_label' ),
             'settings'   => 'texto_sobre_nos',
-            'section'    => 'intro',
+            'section'    => 'sobre_nos',
             'type'       => 'textarea'
         )
     ) );
 
-    // Escolha da página
-
-    // Texto do bloco sobre nós
+    // Seleção da página para link do bloco sobre nós
     $wp_customize->add_setting(
         'pagina_sobre_nos',
         array(
@@ -231,38 +269,84 @@ function theme_customizer_settings( $wp_customize ) {
         $wp_customize,
         'pagina_sobre_nos',
         array(
-            'label'      => __( 'Texto do bloco sobre nós', 'pagina_sobre_nos_label' ),
+            'label'      => __( 'Página para linkar o botão saiba mais', 'pagina_sobre_nos_label' ),
             'settings'   => 'pagina_sobre_nos',
-            'section'    => 'intro',
-            'type'       => 'textarea'
+            'section'    => 'sobre_nos',
+            'type'       => 'dropdown-pages'
         )
     ) );
 
+    // Submenu do menu principal -------------------------- Ultimas Notícias ---------------------------
+    $wp_customize->add_section( 'ultimas_noticias', array(
+        'title'      => __( 'Últimas Notícias' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
 
-    $wp_customize->add_setting( 'cor_destaque',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
-    )
+    //Título do bloco ultimas notícias ---------------
+    $wp_customize->add_setting(
+        'titulo_ultimas_noticias',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
     );
     
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cor_destaque',
-    array(
-        'label' => __( 'Cor de Destaque', 'cor_destaque_pick' ),
-        'section' => 'title_tagline',
-        'input_attrs' => array(
-            'label'      => __( 'Cor dos Títulos', 'mytheme' ),
-            'section'    => 'cores_section',
-            'settings'   => 'cor_destaque',
-        ),
-    )
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_ultimas_noticias',
+        array(
+            'label'      => __( 'Título do bloco últimas notícias', 'titulo_ultimas_noticias_label' ),
+            'settings'   => 'titulo_ultimas_noticias',
+            'section'    => 'ultimas_noticias',
+            'type'       => 'text'
+        )
     ) );
+
+     //Subtítulo do bloco ultimas notícias ---------------
+     $wp_customize->add_setting(
+        'subtitulo_ultimas_noticias',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
     
-    $wp_customize->add_setting( 'cor_texto_header',
-    array(
-        'default' => '',
-        'transport' => 'refresh',
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'subtitulo_ultimas_noticias',
+        array(
+            'label'      => __( 'Subtítulo do bloco últimas notícias', 'subtitulo_ultimas_noticias_label' ),
+            'settings'   => 'subtitulo_ultimas_noticias',
+            'section'    => 'ultimas_noticias',
+            'type'       => 'text'
+        )
     ) );
+
+    // $wp_customize->add_setting( 'cor_destaque',
+    // array(
+    //     'default' => '',
+    //     'transport' => 'refresh',
+    // )
+    // );
+    
+    // $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cor_destaque',
+    // array(
+    //     'label' => __( 'Cor de Destaque', 'cor_destaque_pick' ),
+    //     'section' => 'title_tagline',
+    //     'input_attrs' => array(
+    //         'label'      => __( 'Cor dos Títulos', 'mytheme' ),
+    //         'section'    => 'cores_section',
+    //         'settings'   => 'cor_destaque',
+    //     ),
+    // )
+    // ) );
+    
+    // $wp_customize->add_setting( 'cor_texto_header',
+    // array(
+    //     'default' => '',
+    //     'transport' => 'refresh',
+    // ) );
 
 }
 

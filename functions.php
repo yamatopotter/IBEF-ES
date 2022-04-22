@@ -1,6 +1,7 @@
 <?php
 
 require_once("functions/custom-controls.php");
+require_once("functions/custom-post-types.php");
 require_once('functions/custom-theme.php');
 require_once("functions/assets.php");
 
@@ -44,5 +45,71 @@ function returnThemeObject($prop){
     echo get_theme_mod($prop);
 }
 
+function the_thumbnail($size = null) {
+    if ($thumb = get_thumbnail($size, null)) {
+        echo $thumb->src;
+    }
+}
+
+function get_the_thumbnail($size = null) {
+    if ($thumb = get_thumbnail($size, null)) {
+        return $thumb->src;
+    }
+    return '';
+}
+
+function get_thumbnail($size = null, $ID = null) {
+    if ($ID != null) {
+        $attachment = get_post($ID);
+        $meta = json_decode(json_encode(wp_get_attachment_metadata($ID)));
+    } else {
+        global $post;
+        $attachment = get_post(get_post_thumbnail_id($post->ID));
+        $meta = json_decode(json_encode(wp_get_attachment_metadata(get_post_thumbnail_id($post->ID))));
+    }
+    $src = $attachment->guid;
+    if ($size != null) {
+        if (!empty($meta->sizes->{$size})) {
+            $a = explode('/', $meta->file);
+            $file = $a[count($a) - 1];
+            $src = str_replace($file, $meta->sizes->{$size}->file, $src);
+        }
+    }
+    return (object)array(
+        'alt' => get_post_meta($attachment->ID, '_wp_attachment_image_alt', true),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'href' => get_permalink($attachment->ID),
+        'src' => $src,
+        'title' => $attachment->post_title
+    );
+}
+
+// Adiciona reticencias no final do excerpt
+function new_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+//Quantidade do excerpt diferente do padrão
+
+function limit_excerpt($limit) {
+    $excerpt = explode(' ', get_the_excerpt(), $limit);
+    if (count($excerpt)>=$limit) {
+      array_pop($excerpt);
+      $excerpt = implode(" ",$excerpt).'...';
+    } else {
+      $excerpt = implode(" ",$excerpt);
+    }	
+    $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+    return $excerpt;
+}
+
+// Limite de caracteres do excerpt
+
+function the_excerpt_30($length){
+    return 30;
+}
+add_filter('excerpt_length', 'the_excerpt_30');
 
 ?>

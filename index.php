@@ -1,5 +1,10 @@
+<?php
+    // add header
+    get_header();
+    // query noticias posts
+    $news_query = new WP_Query(array('post_type' => 'noticias' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
 
-<?php get_header(); ?>
+?>
     <main class="main-index">
         <section class="intro">
             <div class="container">
@@ -11,6 +16,7 @@
                     <?php if(get_theme_mod('exibir_botao_intro')):?>
                         <a href="<?php returnThemeObject('link_botao_intro'); ?>" class="btn btn-link link-light"><?php returnThemeObject('texto_botao_intro'); ?> <i class="bi bi-arrow-right"></i></a>
                     <?php endif; ?>
+
                 </div>
             </div>
         </section>
@@ -18,18 +24,18 @@
         <section class="about-us">
             <div class="container">
 
-                <h1 class="title">Sobre Nós</h1>
-                <p class="subtitle">Conheça os mantenedores do IBEF-ES</p>
+                <h1 class="title"><?php returnThemeObject('titulo_sobre_nos'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_sobre_nos'); ?></p>
                 <div class="row">
 
                     <div class="col-12 col-lg-6">
-                        <img src="./assets/img/about-us.jpg" alt="">
+                        <img src="<?php returnThemeObject('img_sobre_nos'); ?>" alt="">
                     </div>
         
                     <div class="col-12 col-lg-6">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quas sapiente deserunt aliquid libero repudiandae eaque, ducimus natus officia explicabo illum quaerat illo vel obcaecati accusamus fugit doloremque vitae. Culpa obcaecati sed soluta beatae, suscipit, quas laborum ex maxime recusandae voluptates facilis veritatis quaerat doloribus?</p>
+                        <p><?php returnThemeObject('texto_sobre_nos'); ?></p>
         
-                        <a href="" class="btn btn-link">Saiba mais <i class="bi bi-arrow-right"></i></a>
+                        <a href="<?php returnThemeObject('pagina_sobre_nos'); ?>" class="btn btn-link">Saiba mais <i class="bi bi-arrow-right"></i></a>
                     </div>
 
                 </div>
@@ -41,46 +47,17 @@
         <section class="latest-news">
             <div class="container">
                 
-                <h1 class="title">Ultimas notícias</h1>
-                <p class="subtitle">Fique por dentro das ultimas</p>
+                <h1 class="title"><?php returnThemeObject('titulo_ultimas_noticias'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_ultimas_noticias'); ?></p>
     
                 <div class="row">
     
-                    <div class="col-12 col-lg-4 d-flex align-items-strech">
-                        <article class="card">
-                            <img src="./assets/img/news-image.gif" alt="" class="news-pic">    
-                            <h1>Titulo da matéria de exemplo maior que o normal</h1>    
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus quae omnis neque deserunt quisquam numquam dolor repellendus soluta tenetur atque?... </p>     
-                            <a href="" class="btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>   
-                        </article>
-                    </div>
-                    
-                    <div class="col-12 col-lg-4 d-flex align-items-strech">
-
-                        <article class="card">
-                            <img src="./assets/img/news-image.gif" alt="" class="news-pic">    
-                            <h1>Titulo da matéria de exemplo</h1>    
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus quae omnis neque deserunt quisquam numquam dolor repellendus soluta tenetur atque?... </p> 
-                            <a href="" class="btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>       
-                        </article>
-
-                    </div>
-
-                    <div class="col-12 col-lg-4 d-flex align-items-strech">
-                        
-                        <article class="card">
-                            <img src="./assets/img/news-image.gif" alt="" class="news-pic">    
-                            <h1>Titulo da matéria de exemplo</h1>    
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus quae omnis neque deserunt quisquam numquam dolor repellendus soluta tenetur atque?... </p>   
-                            <a href="" class=" btn link">Leia Mais <i class="bi bi-arrow-right"></i></a>     
-                        </article>
-
-                    </div>
+                    <?php require_once('list-noticias.php'); ?>
 
                 </div>
 
                 <div class="row button-more">
-                    <a href="" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
+                    <a href="<?php echo get_post_type_archive_link( 'noticias' ); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </section>

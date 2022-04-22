@@ -35,7 +35,9 @@ function enqueue_site_assets() {
 
 //Realiza a função de registrar os arquivos e os inserir na página.
 add_action('init', function () {
-    register_assets();
+    if (!(is_admin())) {
+        register_assets();
+    }
     enqueue_site_assets();
 });
 

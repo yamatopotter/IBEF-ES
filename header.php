@@ -10,7 +10,7 @@
     <?php if(is_front_page()){ ?>
         <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php }else{ ?>
-        <meta name="description" content="<?php echo excerpt(20); ?>">
+        <meta name="description" content="<?php echo limit_excerpt(20); ?>">
     <?php } ?>
 
     <!-- meta tag facebook -->
