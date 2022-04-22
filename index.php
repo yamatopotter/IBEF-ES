@@ -66,8 +66,8 @@
         <section class="events">
             <div class="container">
 
-                <h1 class="title">Eventos</h1>
-                <p class="subtitle">Acompanhe nossos próximos eventos</p>
+                <h1 class="title"><?php returnThemeObject('titulo_eventos'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_eventos'); ?></p>
                
                 <div class="row event-card-list">
 
@@ -86,10 +86,10 @@
 
         <section class="spotify">
             <div class="container">
-                <h1 class="title">Podcast IBEF</h1>
-                <p class="subtitle">Fique por dentro das ultimas notícias</p>
+                <h1 class="title"><?php returnThemeObject('titulo_podcast'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_podcast'); ?></p>
 
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/2tEGtFbAUH6nQLs5RcICrF?utm_source=generator&theme=0" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <?php returnThemeObject('iframe_podcast'); ?>
 
             </div>
         </section>

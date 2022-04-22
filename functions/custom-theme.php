@@ -323,6 +323,120 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
+    // Submenu do menu principal -------------------------- Eventos ---------------------------
+    $wp_customize->add_section( 'eventos', array(
+        'title'      => __( 'Eventos' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
+
+    //Título do bloco ultimas notícias ---------------
+    $wp_customize->add_setting(
+        'titulo_eventos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_eventos',
+        array(
+            'label'      => __( 'Título do bloco de eventos', 'titulo_eventos_label' ),
+            'settings'   => 'titulo_eventos',
+            'section'    => 'eventos',
+            'type'       => 'text'
+        )
+    ) );
+
+     //Subtítulo do bloco ultimas notícias ---------------
+     $wp_customize->add_setting(
+        'subtitulo_eventos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'subtitulo_eventos',
+        array(
+            'label'      => __( 'Subtítulo do bloco de eventos', 'subtitulo_eventos_label' ),
+            'settings'   => 'subtitulo_eventos',
+            'section'    => 'eventos',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Submenu do menu principal -------------------------- Podcast ---------------------------
+    $wp_customize->add_section( 'podcast', array(
+        'title'      => __( 'Podcast' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
+
+    //Título do bloco ultimas notícias ---------------
+    $wp_customize->add_setting(
+        'titulo_podcast',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_podcast',
+        array(
+            'label'      => __( 'Título do bloco de podcast', 'titulo_podcast_label' ),
+            'settings'   => 'titulo_podcast',
+            'section'    => 'podcast',
+            'type'       => 'text'
+        )
+    ) );
+
+    //Subtítulo do bloco ultimas notícias ---------------
+     $wp_customize->add_setting(
+        'subtitulo_podcast',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'subtitulo_podcast',
+        array(
+            'label'      => __( 'Subtítulo do bloco de podcast', 'subtitulo_podcast_label' ),
+            'settings'   => 'subtitulo_podcast',
+            'section'    => 'podcast',
+            'type'       => 'text'
+        )
+    ) );
+
+    //Código do Spotify ---------------
+      $wp_customize->add_setting(
+        'iframe_podcast',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'iframe_podcast',
+        array(
+            'label'      => __( 'Código do player do podcast', 'iframe_podcast_label' ),
+            'settings'   => 'iframe_podcast',
+            'section'    => 'podcast',
+            'type'       => 'textarea'
+        )
+    ) );
+
     // $wp_customize->add_setting( 'cor_destaque',
     // array(
     //     'default' => '',
