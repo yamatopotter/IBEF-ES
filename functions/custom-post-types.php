@@ -88,6 +88,7 @@ function register_post_types(){
         'taxonomies' => array('mantenedor_category'),
         'rewrite' => array('slug' => 'mantenedor'),
         'show_in_nav_menus' => true,
+        'show_in_rest' => true,
         'supports' => array(
             'title', 'thumbnail', 'custom-fields'
         )
@@ -187,7 +188,7 @@ function mantenedor_category() {
 		'show_tagcloud' => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column' => true,
-		'show_in_rest' => false,
+		'show_in_rest' => true,
 	);
 	register_taxonomy( 'mantenedor', array('mantenedor'), $args );
 }

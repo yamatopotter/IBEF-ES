@@ -377,7 +377,7 @@ function theme_customizer_settings( $wp_customize ) {
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco ultimas notícias ---------------
+    //Título do bloco podcast ---------------
     $wp_customize->add_setting(
         'titulo_podcast',
         array(
@@ -397,7 +397,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Subtítulo do bloco ultimas notícias ---------------
+    //Subtítulo do blocopodcast ---------------
      $wp_customize->add_setting(
         'subtitulo_podcast',
         array(
@@ -437,6 +437,220 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
+    // Submenu do menu principal -------------------------- Mantenedores ---------------------------
+    $wp_customize->add_section( 'mantenedores', array(
+        'title'      => __( 'Mantenedores' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
+
+    //Título do bloco Mantenedores ---------------
+    $wp_customize->add_setting(
+        'titulo_mantenedores',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_mantenedores',
+        array(
+            'label'      => __( 'Título do bloco de mantenedores', 'titulo_mantenedores_label' ),
+            'settings'   => 'titulo_mantenedores',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    //Subtítulo do bloco Mantenedores ---------------
+     $wp_customize->add_setting(
+        'subtitulo_mantenedores',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'subtitulo_mantenedores',
+        array(
+            'label'      => __( 'Subtítulo do bloco de mantenedores', 'subtitulo_mantenedores_label' ),
+            'settings'   => 'subtitulo_mantenedores',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Mantenedor Diamante
+
+    //Título da categoria diamante ---------------
+    $wp_customize->add_setting(
+        'titulo_categoria_diamante',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_categoria_diamante',
+        array(
+            'label'      => __( 'Título da categoria diamante', 'titulo_categoria_diamante_label' ),
+            'settings'   => 'titulo_categoria_diamante',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Categoria a ser listada na área de diamantes
+    $wp_customize->add_setting( 'categoria_bloco_diamante',
+	array(
+		'default' => '',
+		'transport' => 'refresh',
+	));
+
+    $wp_customize->add_control(  new WP_Customize_Control(
+        $wp_customize,
+        'categoria_bloco_diamante',
+        array(
+            'label'      => __( 'Categoria a ser listada no bloco de mantenedores diamante', 'categoria_bloco_diamante_label' ),
+            'settings'   => 'categoria_bloco_diamante',
+            'section'    => 'mantenedores',
+            'type'       => 'select',
+            'choices' => returnCustomTerm('mantenedor')
+        )
+    ) );
+
+    // Mantenedor Master
+
+    //Título da categoria master ---------------
+    $wp_customize->add_setting(
+        'titulo_categoria_master',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_categoria_master',
+        array(
+            'label'      => __( 'Título da categoria master', 'titulo_categoria_master_label' ),
+            'settings'   => 'titulo_categoria_master',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Categoria a ser listada na área de diamantes
+
+    $wp_customize->add_setting( 'categoria_bloco_master',
+	array(
+		'default' => '',
+		'transport' => 'refresh',
+	));
+
+    $wp_customize->add_control(  new WP_Customize_Control(
+        $wp_customize,
+        'categoria_bloco_master',
+        array(
+            'label'      => __( 'Categoria a ser listada no bloco de mantenedores master', 'categoria_bloco_master_label' ),
+            'settings'   => 'categoria_bloco_master',
+            'section'    => 'mantenedores',
+            'type'       => 'select',
+            'choices' => returnCustomTerm('mantenedor')
+        )
+    ) );
+
+    // Mantenedor Sênior
+
+    //Título da categoria senior ---------------
+     $wp_customize->add_setting(
+        'titulo_categoria_senior',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_categoria_senior',
+        array(
+            'label'      => __( 'Título da categoria senior', 'titulo_categoria_senior_label' ),
+            'settings'   => 'titulo_categoria_senior',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Categoria a ser listada na área de diamantes
+
+     $wp_customize->add_setting( 'categoria_bloco_senior',
+     array(
+         'default' => '',
+         'transport' => 'refresh',
+     ));
+ 
+     $wp_customize->add_control(  new WP_Customize_Control(
+         $wp_customize,
+         'categoria_bloco_senior',
+         array(
+             'label'      => __( 'Categoria a ser listada no bloco de mantenedores sêniors', 'categoria_bloco_senior_label' ),
+             'settings'   => 'categoria_bloco_senior',
+             'section'    => 'mantenedores',
+             'type'       => 'select',
+             'choices' => returnCustomTerm('mantenedor')
+         )
+     ) );
+
+    // Mantenedor Apoiador
+    
+     //Título da categoria apoiador ---------------
+    $wp_customize->add_setting(
+        'titulo_categoria_apoiador',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_categoria_apoiador',
+        array(
+            'label'      => __( 'Título da categoria apoiador ', 'titulo_categoria_apoiador_label' ),
+            'settings'   => 'titulo_categoria_apoiador',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Categoria a ser listada na área de diamantes
+
+     $wp_customize->add_setting( 'categoria_bloco_apoiador',
+     array(
+         'default' => '',
+         'transport' => 'refresh',
+     ));
+ 
+     $wp_customize->add_control(  new WP_Customize_Control(
+         $wp_customize,
+         'categoria_bloco_apoiador',
+         array(
+             'label'      => __( 'Categoria a ser listada no bloco de mantenedores apoiadores', 'categoria_bloco_apoiador_label' ),
+             'settings'   => 'categoria_bloco_apoiador',
+             'section'    => 'mantenedores',
+             'type'       => 'select',
+             'choices' => returnCustomTerm('mantenedor')
+         )
+     ) );
+
     // $wp_customize->add_setting( 'cor_destaque',
     // array(
     //     'default' => '',
@@ -461,6 +675,31 @@ function theme_customizer_settings( $wp_customize ) {
     //     'default' => '',
     //     'transport' => 'refresh',
     // ) );
+
+}
+
+function returnCustomTerm($nameTerm){
+    $terms = get_terms(array(
+        'taxonomy' => $nameTerm,
+        'hide_empty' => false,
+    ));
+    $cats = array();
+
+    foreach( $terms as $term ) {
+
+        // uncomment to see all $category data
+        #print_r($category);
+    
+        if( $i == 0 ){
+    
+            $default = $term->term_id;
+            $i++;
+    
+        }
+        $cats[$term->term_id] = $term->name;
+    }
+
+    return $cats;
 
 }
 

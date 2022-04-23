@@ -97,44 +97,27 @@
         <section class="members">
             <div class="container">
 
-                <h1 class="title">Mantenedores do IBEF-ES</h1>
-                <p class="subtitle">Conheça os mantenedores do IBEF-ES</p>
+                <h1 class="title"><?php returnThemeObject('titulo_mantenedores'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_mantenedores'); ?></p>
     
                 <div class="row d-flex justify-content-center text-center member-list">
-                    <h3>Mantenedores diamante</h3>
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-diamante">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-diamante">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-diamante">
+                    <h3><?php returnThemeObject('titulo_categoria_diamante'); ?></h3>
+                    <!-- foreach todo -->
                 </div>
     
                 <div class="row d-flex justify-content-center text-center member-list">
-                    <h3>Mantenedores master</h3>
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-master">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-master">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-master">
+                    <h3><?php returnThemeObject('titulo_categoria_master'); ?></h3>
+                    <!-- foreach todo -->
                 </div>
     
                 <div class="row d-flex justify-content-center text-center member-list">
-                    <h3>Mantenedores sênior</h3>
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-senior">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-senior">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-senior">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-senior">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-senior">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-senior">
+                    <h3><?php returnThemeObject('titulo_categoria_senior'); ?></h3>
+                    <!-- foreach todo -->
                 </div>
     
                 <div class="row d-flex justify-content-center text-center member-list">
-                    <h3>Apoiadores</h3>
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
-                    <img src="./assets/img/mantenedor.png" alt="" class="mantenedor-apoiador">
+                    <h3><?php returnThemeObject('titulo_categoria_apoiador'); ?></h3>
+                    <!-- foreach todo -->
                 </div>
 
             </div>
