@@ -100,6 +100,34 @@ function register_post_types(){
             'title', 'thumbnail', 'custom-fields'
         )
     ));
+
+     // Galeria de Fotos
+     register_post_type('galerias', array(
+        'labels' => array(
+            'name' => __('Galeria de Fotos'),
+            'singular_name' => __('Galeria de Foto'),
+            'add_new' => __('Adicionar nova galeria'),
+            'add_new_item' => __('Adicionar nova galeria'),
+            'edit_item' => __('Editar galeria'),
+            'new_item' => __('Nova galeria'),
+            'all_items' => __('Todas as galerias'),
+            'view_item' => __('Exibir galeria'),
+            'search_items' => __('Buscar galerias'),
+            'not_found' => __('Nenhuma galeria encontrado'),
+            'not_found_in_trash' => __('Nenhuma galeria encontrada na Lixeira'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Galeria de Fotos'
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-format-gallery',
+        'has_archive' => true,
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'fotos'),
+        'show_in_nav_menus' => true,
+        'supports' => array(
+            'title', 'editor', 'thumbnail'
+        )
+    ));
 }
 
 add_action('init', 'register_post_types');
