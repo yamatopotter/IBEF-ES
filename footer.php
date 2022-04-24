@@ -1,26 +1,25 @@
 <section class="contact">
 
             <div class="container">
+            <h1 class="title">Contato</h1>
 
-                <h1 class="title">Contato</h1>
-
-                <div class="row">
-                    <div class="contact-data col-12 col-lg-4">
-                        <i class="bi-phone"></i>
-                        <p>Telefone</p>
-                        <a href="telefone">+55 (27) 99864-1411</a>
-                    </div>
-                    <div class="contact-data col-12 col-lg-4">
-                        <i class="bi-envelope"></i>
-                        <p>E-mail</p>
-                        <a href="email">ibefes@ibefes.org.br</a>
-                    </div>
-                    <div class="contact-data col-12 col-lg-4">
-                        <i class="bi-pin-map"></i>
-                        <p>Local</p>
-                        <a href="endereço">R. João da Cruz, 25 – 4º Andar – Praia do Canto, Vitória – ES</a>
-                    </div>
+            <div class="row">
+                <div class="col-4">
+                    <i class="bi-phone"></i>
+                    <p>Telefone</p>
+                    <a href="telefone">+55 (27) 99864-1411</a>
                 </div>
+                <div class="col-4">
+                    <i class="bi-envelope"></i>
+                    <p>E-mail</p>
+                    <a href="email">ibefes@ibefes.org.br</a>
+                </div>
+                <div class="col-4">
+                    <i class="bi-pin-map"></i>
+                    <p>Local</p>
+                    <a href="endereço">R. João da Cruz, 25 – 4º Andar – Praia do Canto, Vitória – ES</a>
+                </div>
+            </div>
 
             </div>
 

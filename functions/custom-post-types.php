@@ -1,7 +1,5 @@
 <?php
 
-add_action('init', 'register_post_types');
-
 function register_post_types(){
     // Notícias
     register_post_type('noticias', array(
@@ -23,6 +21,8 @@ function register_post_types(){
         'public' => true,
         'menu_icon' => 'dashicons-media-document',
         'has_archive' => true,
+        'taxonomies' => array('category', 'post_tag'),
+        'hierarchical' => true,
         'rewrite' => array('slug' => 'noticias'),
         'show_in_nav_menus' => true,
         'supports' => array(
@@ -52,11 +52,15 @@ function register_post_types(){
         'public' => true,
         'menu_icon' => 'dashicons-calendar-alt',
         'public_queryable' => true,
+        'hierarchical' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'eventos'),
         'show_in_nav_menus' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'can_export' => true,
         'supports' => array(
-            'title', 'excerpt', 'editor', 'thumbnail', 'custom-fields'
+            'title', 'editor', 'thumbnail', 'custom-fields'
         )
     ));
 
@@ -89,11 +93,16 @@ function register_post_types(){
         'rewrite' => array('slug' => 'mantenedor'),
         'show_in_nav_menus' => true,
         'show_in_rest' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'capability_type' => 'post',
         'supports' => array(
             'title', 'thumbnail', 'custom-fields'
         )
     ));
 }
+
+add_action('init', 'register_post_types');
 // --------------------- Metabox - Evento - Data do Evento ------------------------------
 function add_event_metaboxes(){
     add_meta_box(
@@ -125,6 +134,105 @@ function post_meta_box_events_post(){
     $custom = get_post_custom($post->ID);
     $fieldData = $custom['_event_date'][0];
     echo "<input type=\"date\" name=\"_event_date\" value=\"".$fieldData."\" placeholder=\"Dia do Evento\"> ";
+}
+
+// --------------------- Metabox - Evento - Link de Inscrição -------------------------
+function add_link_event_metaboxes(){
+    add_meta_box(
+        "post_metadata_link_events_post", //div id contendo os campos renderizados
+        "Link para inscrição do evento",  //Titulo da sessão que será mostrado como texto
+        "post_meta_box_link_events_post", //callback para renderizar os campos
+        "eventos", //nome do tipo do post onde queremos que a caixa renderize
+        "normal", //local na tela onde ele vai ficar
+        "low" //prioridade de exibição
+    );
+}
+
+add_action("admin_init", 'add_link_event_metaboxes');
+
+// Função que realiza o salvamento das informações
+function save_link_post_meta_box(){
+    global $post;
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        return;
+    }
+    update_post_meta($post->ID,"_event_link", sanitize_text_field($_POST['_event_link']));
+}
+
+add_action('save_post', 'save_link_post_meta_box');
+
+// Função de callback
+function post_meta_box_link_events_post(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $fieldData = $custom['_event_link'][0];
+    echo "<input type=\"text\" name=\"_event_link\" value=\"".$fieldData."\" placeholder=\"Link de inscrição do evento\" style='padding: 10px; width: 100%; display: block'> ";
+}
+
+// --------------------- Metabox - Evento - Local ------------------------------
+function add_local_event_metaboxes(){
+    add_meta_box(
+        "post_metadata_local_events_post", //div id contendo os campos renderizados
+        "Local do Evento",  //Titulo da sessão que será mostrado como texto
+        "post_meta_box_local_events_post", //callback para renderizar os campos
+        "eventos", //nome do tipo do post onde queremos que a caixa renderize
+        "side", //local na tela onde ele vai ficar
+        "low" //prioridade de exibição
+    );
+}
+
+add_action("admin_init", 'add_local_event_metaboxes');
+
+// Função que realiza o salvamento das informações
+function save_post_local_event_meta_box(){
+    global $post;
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        return;
+    }
+    update_post_meta($post->ID,"_local_event", sanitize_text_field($_POST['_local_event']));
+}
+
+add_action('save_post', 'save_post_local_event_meta_box');
+
+// Função de callback
+function post_meta_box_local_events_post(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $fieldData = $custom['_local_event'][0];
+    echo "<input type=\"text\" name=\"_local_event\" value=\"".$fieldData."\" placeholder=\"Local do Evento\"> ";
+}
+
+// --------------------- Metabox - Evento - Tema ------------------------------
+function add_tema_event_metaboxes(){
+    add_meta_box(
+        "post_metadata_tema_events_post", //div id contendo os campos renderizados
+        "Tema do Evento",  //Titulo da sessão que será mostrado como texto
+        "post_meta_box_tema_events_post", //callback para renderizar os campos
+        "eventos", //nome do tipo do post onde queremos que a caixa renderize
+        "side", //local na tela onde ele vai ficar
+        "low" //prioridade de exibição
+    );
+}
+
+add_action("admin_init", 'add_tema_event_metaboxes');
+
+// Função que realiza o salvamento das informações
+function save_post_tema_event_meta_box(){
+    global $post;
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        return;
+    }
+    update_post_meta($post->ID,"_tema_event", sanitize_text_field($_POST['_tema_event']));
+}
+
+add_action('save_post', 'save_post_tema_event_meta_box');
+
+// Função de callback
+function post_meta_box_tema_events_post(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $fieldData = $custom['_tema_event'][0];
+    echo "<input type=\"text\" name=\"_tema_event\" value=\"".$fieldData."\" placeholder=\"Tema do Evento\"> ";
 }
 
 // ---------------- Metabox - Mantenedor - Link para a imagem -------------------------

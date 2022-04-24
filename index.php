@@ -3,7 +3,13 @@
     get_header();
     // query noticias posts
     $news_query = new WP_Query(array('post_type' => 'noticias' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
-    $events_query = new WP_Query(array('post_type' => 'eventos' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
+    $events_query = new WP_Query(array(
+        'post_type' => 'eventos' ,
+        'orderby' => '_event_date',
+        'meta_key' => '_event_date',
+        'order' => 'DESC',
+        'posts_per_page' => 3
+    ));
     $mantenedor_diamante_query = new WP_Query(array(
         'post_type' => 'mantenedor', 
         'tax_query' => array(
@@ -140,7 +146,7 @@
 
                     <?php while($mantenedor_diamante_query->have_posts()): $mantenedor_diamante_query->the_post(); $postId = $events_query->post->ID;?>
                         <?php if(get_the_thumbnail()): ?>
-                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                            <a href="<?php echo returnCustomObject('_link_mantenedor'); ?>" target="_blank">
                                 <img class="mantenedor-diamante" src="<?php the_thumbnail('medium-rectangle') ?>">
                             </a>
                         <?php  ?>
@@ -152,7 +158,7 @@
 
                     <?php while($mantenedor_master_query->have_posts()): $mantenedor_master_query->the_post(); $postId = $events_query->post->ID;?>
                         <?php if(get_the_thumbnail()): ?>
-                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                            <a href="<?php echo returnCustomObject('_link_mantenedor'); ?>" target="_blank">
                                 <img class="mantenedor-master" src="<?php the_thumbnail('medium-rectangle') ?>">
                             </a>
                         <?php  ?>
@@ -164,7 +170,7 @@
 
                     <?php while($mantenedor_senior_query->have_posts()): $mantenedor_senior_query->the_post(); $postId = $events_query->post->ID;?>
                         <?php if(get_the_thumbnail()): ?>
-                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                            <a href="<?php echo returnCustomObject('_link_mantenedor'); ?>" target="_blank">
                                 <img class="mantenedor-senior" src="<?php the_thumbnail('medium-rectangle') ?>">
                             </a>
                         <?php  ?>
@@ -176,7 +182,7 @@
 
                     <?php while($mantenedor_apoiador_query->have_posts()): $mantenedor_apoiador_query->the_post(); $postId = $events_query->post->ID;?>
                         <?php if(get_the_thumbnail()): ?>
-                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                            <a href="<?php echo returnCustomObject('_link_mantenedor'); ?>" target="_blank">
                                 <img class="mantenedor-apoiador" src="<?php the_thumbnail('medium-rectangle') ?>">
                             </a>
                         <?php  ?>
@@ -185,3 +191,8 @@
 
             </div>
         </section>
+
+<?php
+    // add header
+    get_footer();
+?>

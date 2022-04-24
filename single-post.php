@@ -1,69 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Reset CSS -->
+<?php
+    // add header
+    get_header();
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    </style>
-
-    <!-- End Reset -->
-
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <!-- Estilos Mutáveis -->
-    <style>
-        .intro{
-            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('./assets/img/bg.jpg') no-repeat center center/cover;
-        }
-        .latest-news .card a{
-            color: #0a0a0a;
-            font-weight: bold;
-        }
-    </style>
-    <title>IBEF-ES</title>
-</head>
-<body>
-    <header>
-
-        <img src='./assets/img/logo-ibef.png' class="logo-header" id="logo-header">
-
-        <nav class="navbar-expand-lg navbar-light bg-light" id="main-menu">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="main-navbar">
-
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">opção menu</a></li>
-                    </ul>
-    
-                </div>
-
-            </div>
-
-        </nav>
-    </header>
+?>
 
     <main>
 
@@ -143,16 +82,7 @@
 
         </section>
 
-    </main>
-
-    <footer>
-        <div class="container">
-           IBEF-ES 2022, Todos os direitos reservados.
-        </div>
-    </footer>
-
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-
-</body>
-</html>
+    <?php
+    // add header
+    get_footer();
+?>
