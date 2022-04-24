@@ -4,7 +4,42 @@
     // query noticias posts
     $news_query = new WP_Query(array('post_type' => 'noticias' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
     $events_query = new WP_Query(array('post_type' => 'eventos' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
-
+    $mantenedor_diamante_query = new WP_Query(array(
+        'post_type' => 'mantenedor', 
+        'tax_query' => array(
+            array (
+                'taxonomy' => 'mantenedor',
+                'field' => 'slug',
+                'terms' => get_theme_mod('categoria_bloco_diamante'),
+            )
+    )));
+    $mantenedor_master_query = new WP_Query(array(
+        'post_type' => 'mantenedor', 
+        'tax_query' => array(
+            array (
+                'taxonomy' => 'mantenedor',
+                'field' => 'slug',
+                'terms' => get_theme_mod('categoria_bloco_master'),
+            )
+    )));
+    $mantenedor_senior_query = new WP_Query(array(
+        'post_type' => 'mantenedor', 
+        'tax_query' => array(
+            array (
+                'taxonomy' => 'mantenedor',
+                'field' => 'slug',
+                'terms' => get_theme_mod('categoria_bloco_senior'),
+            )
+    )));
+    $mantenedor_apoiador_query = new WP_Query(array(
+        'post_type' => 'mantenedor', 
+        'tax_query' => array(
+            array (
+                'taxonomy' => 'mantenedor',
+                'field' => 'slug',
+                'terms' => get_theme_mod('categoria_bloco_apoiador'),
+            )
+    )));
 ?>
     <main class="main-index">
         <section class="intro">
@@ -102,22 +137,50 @@
     
                 <div class="row d-flex justify-content-center text-center member-list">
                     <h3><?php returnThemeObject('titulo_categoria_diamante'); ?></h3>
-                    <!-- foreach todo -->
+
+                    <?php while($mantenedor_diamante_query->have_posts()): $mantenedor_diamante_query->the_post(); $postId = $events_query->post->ID;?>
+                        <?php if(get_the_thumbnail()): ?>
+                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                                <img class="mantenedor-diamante" src="<?php the_thumbnail('medium-rectangle') ?>">
+                            </a>
+                        <?php  ?>
+                    <?php endif; endwhile; ?>
                 </div>
     
                 <div class="row d-flex justify-content-center text-center member-list">
                     <h3><?php returnThemeObject('titulo_categoria_master'); ?></h3>
-                    <!-- foreach todo -->
+
+                    <?php while($mantenedor_master_query->have_posts()): $mantenedor_master_query->the_post(); $postId = $events_query->post->ID;?>
+                        <?php if(get_the_thumbnail()): ?>
+                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                                <img class="mantenedor-master" src="<?php the_thumbnail('medium-rectangle') ?>">
+                            </a>
+                        <?php  ?>
+                    <?php endif; endwhile; ?>
                 </div>
     
                 <div class="row d-flex justify-content-center text-center member-list">
                     <h3><?php returnThemeObject('titulo_categoria_senior'); ?></h3>
-                    <!-- foreach todo -->
+
+                    <?php while($mantenedor_senior_query->have_posts()): $mantenedor_senior_query->the_post(); $postId = $events_query->post->ID;?>
+                        <?php if(get_the_thumbnail()): ?>
+                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                                <img class="mantenedor-senior" src="<?php the_thumbnail('medium-rectangle') ?>">
+                            </a>
+                        <?php  ?>
+                    <?php endif; endwhile; ?>
                 </div>
     
                 <div class="row d-flex justify-content-center text-center member-list">
                     <h3><?php returnThemeObject('titulo_categoria_apoiador'); ?></h3>
-                    <!-- foreach todo -->
+
+                    <?php while($mantenedor_apoiador_query->have_posts()): $mantenedor_apoiador_query->the_post(); $postId = $events_query->post->ID;?>
+                        <?php if(get_the_thumbnail()): ?>
+                            <a href="<?php returnLinkMantenedor($postId); ?>" target="_self">
+                                <img class="mantenedor-apoiador" src="<?php the_thumbnail('medium-rectangle') ?>">
+                            </a>
+                        <?php  ?>
+                    <?php endif; endwhile; ?>
                 </div>
 
             </div>

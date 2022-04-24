@@ -124,5 +124,9 @@ function returnFullDateEvent($postId){
     return date_format(date_create(get_post_meta($postId, '_event_date', true)), 'd-m-Y');
 }
 
+function returnLinkMantenedor($postId){
+    return get_post_meta($postId, '_link_mantenedor', true);
+}
+
 
 ?>

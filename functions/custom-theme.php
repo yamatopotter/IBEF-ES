@@ -696,7 +696,7 @@ function returnCustomTerm($nameTerm){
             $i++;
     
         }
-        $cats[$term->term_id] = $term->name;
+        $cats[$term->name] = $term->name;
     }
 
     return $cats;
