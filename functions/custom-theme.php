@@ -651,6 +651,60 @@ function theme_customizer_settings( $wp_customize ) {
          )
      ) );
 
+    // Menu para configuração dos Archives
+    $wp_customize->add_panel( 'archives', array(
+        'priority'   => 3,
+        'capability'     => 'edit_theme_options',
+        'theme_supports' => '',
+        'title'          => 'Páginas Internas',
+        'description'    => 'Altera configurações das páginas que listam conteúdos'
+    ));
+
+    // Submenu do menu principal
+    $wp_customize->add_section( 'archive_noticia', array(
+        'title'      => __( 'Noticias' ),
+        'panel'     => 'archives',
+        'priority'   => 0,
+    ));
+
+    // Título da intro 
+
+    $wp_customize->add_setting(
+        'titulo_archive_noticias',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_archive_noticias',
+        array(
+            'label'      => __( 'Título da Página', 'titulo_archive_noticias_label' ),
+            'settings'   => 'titulo_archive_noticias',
+            'section'    => 'archive_noticia',
+            'type'       => 'text'
+        )
+    ));
+
+    $wp_customize->add_setting(
+        'quantidade_posts_noticias',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'quantidade_posts_noticias',
+        array(
+            'label'      => __( 'Quantidade de Post', 'quantidade_posts_noticias_label' ),
+            'settings'   => 'quantidade_posts_noticias',
+            'section'    => 'archive_noticia',
+            'type'       => 'number'
+        )
+    ));
+
     // $wp_customize->add_setting( 'cor_destaque',
     // array(
     //     'default' => '',

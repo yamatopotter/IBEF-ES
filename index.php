@@ -2,7 +2,11 @@
     // add header
     get_header();
     // query noticias posts
-    $news_query = new WP_Query(array('post_type' => 'noticias' , 'orderby' => 'publish_date', 'order' => 'DESC', 'posts_per_page' => 3));
+    $news_query = new WP_Query(array(
+        'post_type' => 'noticias',
+        'orderby' => 'publish_date',
+        'order' => 'DESC',
+        'posts_per_page' => 3));
     $events_query = new WP_Query(array(
         'post_type' => 'eventos' ,
         'orderby' => '_event_date',

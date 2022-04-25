@@ -60,11 +60,6 @@
 
         <?php  endwhile; endif; ?>
 
-    <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/plugins/lightGallery/lightgallery.umd.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/plugins/lightGallery/plugins/zoom/lg-zoom.umd.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/plugins/lightGallery/plugins/thumbnail/lg-thumbnail.umd.js"></script>
-    <!-- <script src="./assets/js/main.js"></script> -->
     <script type="text/javascript">
         lightGallery(document.getElementById('lightgallery'), {
             plugins: [lgThumbnail],

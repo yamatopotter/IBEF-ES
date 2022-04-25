@@ -190,4 +190,11 @@ function my_post_gallery($output, $attr) {
 
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 
+function customNavButtons(){
+    return "class='btn-link'";
+}
+
+add_filter('next_posts_link_attributes', 'customNavButtons');
+add_filter('previous_posts_link_attributes', 'customNavButtons');
+
 ?>
