@@ -98,6 +98,43 @@ function register_post_types(){
         )
     ));
 
+    // Diretoria
+
+    register_post_type('diretoria', array(
+        'labels' => array(
+            'name' => __('Diretoria'),
+            'singular_name' => __('Diretoria'),
+            'add_new' => __('Adicionar novo membro'),
+            'add_new_item' => __('Adicionar novo membro'),
+            'edit_item' => __('Editar membro'),
+            'new_item' => __('Novo membro'),
+            'all_items' => __('Todas os membros'),
+            'view_item' => __('Exibir membro'),
+            'view_items' => __('Exibir membros'),
+            'search_items' => __('Buscar membros'),
+            'not_found' => __('Nenhum membro encontrado'),
+            'not_found_in_trash' => __('Nenhum membro encontrado na lixeira'),
+            'archives' => ('Histórico de membros'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Diretoria'
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-businessman',
+        'public_queryable' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'taxonomies' => array('diretor_category'),
+        'rewrite' => array('slug' => 'diretoria'),
+        'show_in_nav_menus' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'capability_type' => 'post',
+        'supports' => array(
+            'title', 'thumbnail', 'custom-fields'
+        )
+    ));
+
     // Mantenedores
 
     register_post_type('mantenedor', array(
@@ -419,4 +456,38 @@ function mantenedor_category() {
 }
 add_action( 'init', 'mantenedor_category' );
 
+// ----------------------------Categoria para os tipos de diretores -----------------------------
+function diretor_category() {
+
+	$labels = array(
+		'name'              => _x( 'Área da diretoria', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Área da diretoria', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Procurar diretores', 'textdomain' ),
+		'all_items'         => __( 'Todos as áreas', 'textdomain' ),
+		'parent_item'       => __( 'Parent diretor', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent diretor:', 'textdomain' ),
+		'edit_item'         => __( 'Editar diretor', 'textdomain' ),
+		'update_item'       => __( 'Atualizar diretor', 'textdomain' ),
+		'add_new_item'      => __( 'Adicionar nova área', 'textdomain' ),
+		'new_item_name'     => __( 'New diretor Name', 'textdomain' ),
+		'menu_name'         => __( 'Diretor', 'textdomain' ),
+	);
+	$args = array(
+		'labels' => $labels,
+		'description' => __( 'Área da diretoria', 'textdomain' ),
+		'hierarchical' => true,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_tagcloud' => true,
+		'show_in_quick_edit' => true,
+		'show_admin_column' => true,
+		'show_in_rest' => true,
+	);
+	register_taxonomy( 'diretor', array('diretoria'), $args );
+
+}
+add_action( 'init', 'diretor_category' );
 ?>
