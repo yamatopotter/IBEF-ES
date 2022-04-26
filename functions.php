@@ -130,6 +130,11 @@ function returnCustomObject($name){
     return $customObject;
 }
 
+function returnLinkFile($postId){
+    $custom = get_post_meta($postId, 'midia_pdf', true);
+    $fieldData = $custom['url'];
+    return $fieldData;
+}
 // Personalização da galeria
 
 function my_post_gallery($output, $attr) {

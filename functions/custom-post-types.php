@@ -30,6 +30,40 @@ function register_post_types(){
         )
     ));
 
+    // Mídia
+    register_post_type('midia', array(
+        'labels' => array(
+            'name' => __('Mídia'),
+            'singular_name' => __('Mídia'),
+            'add_new' => __('Adicionar nova'),
+            'add_new_item' => __('Adicionar nova mídia'),
+            'edit_item' => __('Editar mídia'),
+            'new_item' => __('Nova mídia'),
+            'all_items' => __('Todas as mídias'),
+            'view_item' => __('Exibir mídia'),
+            'view_items' => __('Exibir mídias'),
+            'search_items' => __('Buscar mídia'),
+            'not_found' => __('Nenhuma mídia encontrado'),
+            'not_found_in_trash' => __('Nenhuma mídia encontrado na lixeira'),
+            'archives' => ('Histórico de mídias'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Mídia'
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-id-alt',
+        'public_queryable' => true,
+        'hierarchical' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'midia'),
+        'show_in_nav_menus' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'supports' => array(
+            'title', 'thumbnail', 'custom-fields'
+        )
+    ));
+
     // Eventos
     register_post_type('eventos', array(
         'labels' => array(
@@ -39,10 +73,10 @@ function register_post_types(){
             'add_new_item' => __('Adicionar novo evento'),
             'edit_item' => __('Editar evento'),
             'new_item' => __('Novo evento'),
-            'all_items' => __('Todas as evento'),
+            'all_items' => __('Todos os evento'),
             'view_item' => __('Exibir evento'),
             'view_items' => __('Exibir eventos'),
-            'search_items' => __('Buscar notícia'),
+            'search_items' => __('Buscar evento'),
             'not_found' => __('Nenhum evento encontrado'),
             'not_found_in_trash' => __('Nenhum evento encontrado na lixeira'),
             'archives' => ('Histórico de eventos'),
@@ -296,6 +330,61 @@ function post_meta_box_link_mantenedor_post(){
     $fieldData = $custom['_link_mantenedor'][0];
     echo "<input type=\"text\" name=\"_link_mantenedor\" value=\"".$fieldData."\" placeholder=\"Link para o site do mantenedor\" style='padding: 10px; width: 100%; display: block'> ";
 }
+
+// --------------- Metabox - Mídia - PDF -----------------------------
+function add_midia_pdf_meta_boxes() {  
+    add_meta_box(
+        'post_metadata_midia_pdf_post', 
+        'PDF da Mídia',
+        'post_meta_box_midia_pdf_post',
+        'midia',
+        'normal',
+        'high');  
+}
+add_action('add_meta_boxes', 'add_midia_pdf_meta_boxes');  
+
+function post_meta_box_midia_pdf_post() {  
+    global $post;
+    $custom = get_post_meta($post->ID, 'midia_pdf', true);
+    $fieldData = $custom['url'];
+    wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
+    $html = '<p class="description">';
+    $html .= 'Upload da mídia em PDF';
+    $html .= '</p>';
+    $html .= '<input type="file" id="midia_pdf" name="midia_pdf" value="" size="40" accept=".pdf">';
+    if(!empty($fieldData)){
+        $html .= '<p class="alert">';
+        $html .= "Já existe um arquivo para esse mídia. Clique <a href='$fieldData' target='_blank'>aqui</a> para visualizar";
+        $html .= '</p>';
+    }
+    echo $html;
+}
+
+function save_post_meta_box_midia_pdf($id) {
+    if(!empty($_FILES['midia_pdf']['name'])) {
+        $supported_types = array('application/pdf');
+        $arr_file_type = wp_check_filetype(basename($_FILES['midia_pdf']['name']));
+        $uploaded_type = $arr_file_type['type'];
+
+        if(in_array($uploaded_type, $supported_types)) {
+            $upload = wp_upload_bits($_FILES['midia_pdf']['name'], null, file_get_contents($_FILES['midia_pdf']['tmp_name']));
+            if(isset($upload['error']) && $upload['error'] != 0) {
+                wp_die('Houve um erro no upload do arquivo. Erro: ' . $upload['error']);
+            } else {
+                update_post_meta($id, 'midia_pdf', $upload);
+            }
+        }
+        else {
+            wp_die("O arquivo que tentou subir não é um PDF.");
+        }
+    }
+}
+add_action('save_post', 'save_post_meta_box_midia_pdf');
+
+function update_edit_form_midia_pdf() {
+    echo ' enctype="multipart/form-data"';
+}
+add_action('post_edit_form_tag', 'update_edit_form_midia_pdf');
 
 // -----------------------------Categoria para os tipos de mantenedores ----------------------
 function mantenedor_category() {	

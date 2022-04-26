@@ -176,7 +176,7 @@ function theme_customizer_settings( $wp_customize ) {
         'panel'    => 'front-page'
     ) );
 
-    // Imagem de background Intro
+    // Imagem do sobre nós
     $wp_customize->add_setting(
         'img_sobre_nos',
         array(
@@ -187,7 +187,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize,
-        'bg_intro',
+        'img_sobre_nos',
         array(
             'label'      => __( 'Imagem do Sobre Nós', 'img_sobre_nos' ),
             'settings'   => 'img_sobre_nos',
@@ -227,7 +227,7 @@ function theme_customizer_settings( $wp_customize ) {
     
     $wp_customize->add_control( new WP_Customize_Control(
         $wp_customize,
-        'titulo_sobre_nos',
+        'subtitulo_sobre_nos',
         array(
             'label'      => __( 'Subtítulo do bloco sobre nós', 'subtitulo_sobre_nos_label' ),
             'settings'   => 'subtitulo_sobre_nos',
@@ -319,6 +319,53 @@ function theme_customizer_settings( $wp_customize ) {
             'label'      => __( 'Subtítulo do bloco últimas notícias', 'subtitulo_ultimas_noticias_label' ),
             'settings'   => 'subtitulo_ultimas_noticias',
             'section'    => 'ultimas_noticias',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Submenu do menu principal -------------------------- Mídia ---------------------------
+    $wp_customize->add_section( 'midia', array(
+        'title'      => __( 'Mídia' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
+
+    //Título do bloco ultimas notícias ---------------
+    $wp_customize->add_setting(
+        'titulo_midia',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_midia',
+        array(
+            'label'      => __( 'Título do bloco de mídia', 'titulo_midia_label' ),
+            'settings'   => 'titulo_midia',
+            'section'    => 'midia',
+            'type'       => 'text'
+        )
+    ) );
+
+     //Subtítulo do bloco ultimas notícias ---------------
+     $wp_customize->add_setting(
+        'subtitulo_midia',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'subtitulo_midia',
+        array(
+            'label'      => __( 'Subtítulo do bloco de mídia', 'subtitulo_midia_label' ),
+            'settings'   => 'subtitulo_midia',
+            'section'    => 'midia',
             'type'       => 'text'
         )
     ) );
@@ -705,6 +752,143 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
+     // Submenu do menu archive - Eventos
+     $wp_customize->add_section( 'archive_eventos', array(
+        'title'      => __( 'Eventos' ),
+        'panel'     => 'archives',
+        'priority'   => 0,
+    ));
+
+    // Título da archive Eventos
+
+    $wp_customize->add_setting(
+        'titulo_archive_eventos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_archive_eventos',
+        array(
+            'label'      => __( 'Título da Página', 'titulo_archive_eventos_label' ),
+            'settings'   => 'titulo_archive_eventos',
+            'section'    => 'archive_eventos',
+            'type'       => 'text'
+        )
+    ));
+
+    // Quantidade de posts a ser exibido por páginação
+    $wp_customize->add_setting(
+        'quantidade_posts_eventos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'quantidade_posts_eventos',
+        array(
+            'label'      => __( 'Quantidade de Post', 'quantidade_posts_eventos_label' ),
+            'settings'   => 'quantidade_posts_eventos',
+            'section'    => 'archive_eventos',
+            'type'       => 'number'
+        )
+    ));
+
+    // Submenu do menu archive - Mídia
+    $wp_customize->add_section( 'archive_midia', array(
+        'title'      => __( 'Mídia' ),
+        'panel'     => 'archives',
+        'priority'   => 0,
+    ));
+
+    // Título da archive Midia
+
+    $wp_customize->add_setting(
+        'titulo_archive_midia',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_archive_midia',
+        array(
+            'label'      => __( 'Título da Página', 'titulo_archive_midia_label' ),
+            'settings'   => 'titulo_archive_midia',
+            'section'    => 'archive_midia',
+            'type'       => 'text'
+        )
+    ));
+
+    // Quantidade de posts a ser exibido por páginação
+    $wp_customize->add_setting(
+        'quantidade_posts_midia',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'quantidade_posts_midia',
+        array(
+            'label'      => __( 'Quantidade de Post', 'quantidade_posts_midia_label' ),
+            'settings'   => 'quantidade_posts_midia',
+            'section'    => 'archive_midia',
+            'type'       => 'number'
+        )
+    ));
+
+    // Submenu do menu archive - Galerias de fotos
+    $wp_customize->add_section( 'archive_fotos', array(
+        'title'      => __( 'Galerias de Fotos' ),
+        'panel'     => 'archives',
+        'priority'   => 0,
+    ));
+
+    // Título da archive Midia
+
+    $wp_customize->add_setting(
+        'titulo_archive_fotos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_archive_fotos',
+        array(
+            'label'      => __( 'Título da Página', 'titulo_archive_fotos_label' ),
+            'settings'   => 'titulo_archive_fotos',
+            'section'    => 'archive_fotos',
+            'type'       => 'text'
+        )
+    ));
+
+    // Quantidade de posts a ser exibido por páginação
+    $wp_customize->add_setting(
+        'quantidade_posts_fotos',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'quantidade_posts_midia',
+        array(
+            'label'      => __( 'Quantidade de Post', 'quantidade_posts_fotos_label' ),
+            'settings'   => 'quantidade_posts_fotos',
+            'section'    => 'titulo_archive_fotos',
+            'type'       => 'number'
+        )
+    ));
     // $wp_customize->add_setting( 'cor_destaque',
     // array(
     //     'default' => '',

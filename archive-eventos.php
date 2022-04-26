@@ -16,7 +16,7 @@
 
             <div class="container">
 
-                <h1><?php //echo get_theme_mod(); ?></h1>
+                <h1><?php echo get_theme_mod('titulo_archive_eventos'); ?></h1>
 
             </div>
 

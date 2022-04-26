@@ -14,6 +14,12 @@
         'order' => 'DESC',
         'posts_per_page' => 3
     ));
+    $midia_query = new WP_Query(array(
+        'post_type' => 'midia' ,
+        'orderby' => 'publish_date',
+        'order' => 'DESC',
+        'posts_per_page' => 3
+    ));
     $mantenedor_diamante_query = new WP_Query(array(
         'post_type' => 'mantenedor', 
         'tax_query' => array(
@@ -122,10 +128,28 @@
 
                 <div class="row button-more">
 
-                    <a href="" class="btn link">Veja outros eventos <i class="bi bi-arrow-right"></i></a>
+                    <a href="<?php echo get_post_type_archive_link( 'eventos' ); ?>" class="btn link">Veja outros eventos <i class="bi bi-arrow-right"></i></a>
 
                 </div>
 
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <div class="container">
+                
+                <h1 class="title"><?php returnThemeObject('titulo_midia'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_midia'); ?></p>
+    
+                <div class="row">
+    
+                    <?php require_once('list-midia.php'); ?>
+
+                </div>
+
+                <div class="row button-more">
+                    <a href="<?php echo get_post_type_archive_link( 'midia' ); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
+                </div>
             </div>
         </section>
 

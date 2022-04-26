@@ -5,7 +5,7 @@
         'post_type' => 'galerias',
         'orderby' => 'publish_date',
         'order' => 'DESC',
-        'posts_per_page' => get_theme_mod('quantidade_posts_galerias', 12),
+        'posts_per_page' => get_theme_mod('quantidade_posts_fotos', 12),
         'paged' => get_query_var('paged') ? get_query_var('paged') : 1));
 ?>
 
@@ -15,7 +15,7 @@
 
             <div class="container">
 
-                <h1>Galeria de Fotos</h1>
+                <h1><?php echo get_theme_mod('titulo_archive_fotos'); ?></h1>
 
             </div>
 
@@ -37,7 +37,8 @@
                                 <a href="<?php the_permalink(); ?>">
                                     <img class="news-pic" src="<?php the_thumbnail('medium-rectangle') ?>">
                                 </a>
-                            <?php endif ?>
+                            <?php endif; ?>
+
                             <h1><?php the_title(); ?></h1>
                             <a href="<?php the_permalink(); ?>" class=" btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>
 
