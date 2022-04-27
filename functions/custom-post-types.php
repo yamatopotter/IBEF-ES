@@ -64,6 +64,40 @@ function register_post_types(){
         )
     ));
 
+    // Informe
+    register_post_type('informe', array(
+        'labels' => array(
+            'name' => __('Informe'),
+            'singular_name' => __('Informe'),
+            'add_new' => __('Adicionar nova'),
+            'add_new_item' => __('Adicionar novo informe'),
+            'edit_item' => __('Editar informe'),
+            'new_item' => __('Novo informe'),
+            'all_items' => __('Todos os informe'),
+            'view_item' => __('Exibir informe'),
+            'view_items' => __('Exibir informes'),
+            'search_items' => __('Buscar informe'),
+            'not_found' => __('Nenhum informe encontrado'),
+            'not_found_in_trash' => __('Nenhum informe encontrado na lixeira'),
+            'archives' => ('Histórico de informes'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Informe'
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-info-outline',
+        'public_queryable' => true,
+        'hierarchical' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'informe'),
+        'show_in_nav_menus' => true,
+        'show_in_rest' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'supports' => array(
+            'title', 'thumbnail', 'custom-fields'
+        )
+    ));
+
     // Eventos
     register_post_type('eventos', array(
         'labels' => array(
@@ -368,6 +402,40 @@ function post_meta_box_link_mantenedor_post(){
     echo "<input type=\"text\" name=\"_link_mantenedor\" value=\"".$fieldData."\" placeholder=\"Link para o site do mantenedor\" style='padding: 10px; width: 100%; display: block'> ";
 }
 
+// ---------------- Metabox - Diretoria - Cargo da Pessoa -------------------------
+
+function add_cargo_diretoria_metaboxes(){
+    add_meta_box(
+        "post_metadata_cargo_diretoria_post", //div id contendo os campos renderizados
+        "Cargo da Pessoa",  //Titulo da sessão que será mostrado como texto
+        "post_meta_box_cargo_diretoria_post", //callback para renderizar os campos
+        "diretoria", //nome do tipo do post onde queremos que a caixa renderize
+        "normal", //local na tela onde ele vai ficar
+        "low" //prioridade de exibição
+    );
+}
+
+add_action("admin_init", 'add_cargo_diretoria_metaboxes');
+
+// Função que realiza o salvamento das informações
+function save_post_meta_box_cargo_diretoria(){
+    global $post;
+    if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        return;
+    }
+    update_post_meta($post->ID,"_cargo_diretoria", sanitize_text_field($_POST['_cargo_diretoria']));
+}
+
+add_action('save_post', 'save_post_meta_box_cargo_diretoria');
+
+// Função de callback
+function post_meta_box_cargo_diretoria_post(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $fieldData = $custom['_cargo_diretoria'][0];
+    echo "<input type=\"text\" name=\"_cargo_diretoria\" value=\"".$fieldData."\" placeholder=\"Cargo da pessoa\" style='padding: 10px; width: 100%; display: block'> ";
+}
+
 // --------------- Metabox - Mídia - PDF -----------------------------
 function add_midia_pdf_meta_boxes() {  
     add_meta_box(
@@ -422,6 +490,61 @@ function update_edit_form_midia_pdf() {
     echo ' enctype="multipart/form-data"';
 }
 add_action('post_edit_form_tag', 'update_edit_form_midia_pdf');
+
+// --------------- Metabox - Informe - PDF -----------------------------
+function add_informe_pdf_meta_boxes() {  
+    add_meta_box(
+        'post_metadata_informe_pdf_post', 
+        'PDF da Mídia',
+        'post_meta_box_informe_pdf_post',
+        'informe',
+        'normal',
+        'high');  
+}
+add_action('add_meta_boxes', 'add_informe_pdf_meta_boxes');  
+
+function post_meta_box_informe_pdf_post() {  
+    global $post;
+    $custom = get_post_meta($post->ID, 'informe_pdf', true);
+    $fieldData = $custom['url'];
+    wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
+    $html = '<p class="description">';
+    $html .= 'Upload do informe em PDF';
+    $html .= '</p>';
+    $html .= '<input type="file" id="informe_pdf" name="informe_pdf" value="" size="40" accept=".pdf">';
+    if(!empty($fieldData)){
+        $html .= '<p class="alert">';
+        $html .= "Já existe um arquivo para esse informe. Clique <a href='$fieldData' target='_blank'>aqui</a> para visualizar";
+        $html .= '</p>';
+    }
+    echo $html;
+}
+
+function save_post_meta_box_informe_pdf($id) {
+    if(!empty($_FILES['informe_pdf']['name'])) {
+        $supported_types = array('application/pdf');
+        $arr_file_type = wp_check_filetype(basename($_FILES['informe_pdf']['name']));
+        $uploaded_type = $arr_file_type['type'];
+
+        if(in_array($uploaded_type, $supported_types)) {
+            $upload = wp_upload_bits($_FILES['informe_pdf']['name'], null, file_get_contents($_FILES['informe_pdf']['tmp_name']));
+            if(isset($upload['error']) && $upload['error'] != 0) {
+                wp_die('Houve um erro no upload do arquivo. Erro: ' . $upload['error']);
+            } else {
+                update_post_meta($id, 'informe_pdf', $upload);
+            }
+        }
+        else {
+            wp_die("O arquivo que tentou subir não é um PDF.");
+        }
+    }
+}
+add_action('save_post', 'save_post_meta_box_informe_pdf');
+
+function update_edit_form_informe_pdf() {
+    echo ' enctype="multipart/form-data"';
+}
+add_action('post_edit_form_tag', 'update_edit_form_informe_pdf');
 
 // -----------------------------Categoria para os tipos de mantenedores ----------------------
 function mantenedor_category() {	

@@ -7,6 +7,7 @@
         'order' => 'DESC',
         'posts_per_page' => get_theme_mod('quantidade_posts_midia', 12),
         'paged' => get_query_var('paged') ? get_query_var('paged') : 1));
+    
 ?>
 
     <main>
@@ -27,7 +28,7 @@
 
                 <div class="row event-card-list calendar-list">
 
-                    <?php while($midia_query->have_posts()): $midia_query->the_post(); ?>
+                    <?php while($midia_query->have_posts()): $midia_query->the_post(); $postId = $midia_query->post->ID;?>
 
                     <div class="col-3 d-flex align-items-strech">
 

@@ -222,6 +222,11 @@ header .navbar-color {
   }
 }
 
+.members h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300;
+}
+
 .members .mantenedor-diamante {
   max-width: 250px;
 }
