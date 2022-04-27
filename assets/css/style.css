@@ -556,4 +556,10 @@ footer {
 .gallery-content .lightgallery a:hover > .thumbnail {
   opacity: 1;
 }
+
+.eventos-e-programas .evento-programa-pic {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

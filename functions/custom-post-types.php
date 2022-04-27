@@ -335,6 +335,49 @@ function post_meta_box_local_events_post(){
     echo "<input type=\"text\" name=\"_local_event\" value=\"".$fieldData."\" placeholder=\"Local do Evento\"> ";
 }
 
+// Metabox de teste
+
+// function add_test_metaboxes(){
+//     add_meta_box(
+//         "post_metadata_test_post", //div id contendo os campos renderizados
+//         "Local do Evento",  //Titulo da sessão que será mostrado como texto
+//         "post_meta_box_test_post", //callback para renderizar os campos
+//         'page', //nome do tipo do post onde queremos que a caixa renderize
+//         "normal", //local na tela onde ele vai ficar
+//         "low" //prioridade de exibição
+//     );
+// }
+
+// add_action("admin_init", 'add_test_metaboxes');
+
+// // Função que realiza o salvamento das informações
+// function save_post_test_meta_box(){
+//     global $post;
+//     if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+//         return;
+//     }
+//     update_post_meta($post->ID,"_local_event", sanitize_text_field($_POST['_local_event']));
+// }
+
+// add_action('save_post', 'save_post_test_meta_box');
+
+// // Função de callback
+// function post_meta_box_test_post(){
+//     global $post;
+
+//     $template_path = get_post_meta(get_the_ID(), '_wp_page_template', true);
+//     $templates = wp_get_theme()->get_page_templates();
+//     $pageModel = $templates[$template_path];
+
+//     if($pageModel == 'Eventos e Programas'){
+//         $custom = get_post_custom($post->ID);
+//         $fieldData = $custom['_local_event'][0];
+//         echo "<input type=\"text\" name=\"_local_event\" value=\"".$fieldData."\" placeholder=\"Local do Evento\"> ";
+//     }else{
+//         echo "Campo disponivel apenas para outro modelo de página.";
+//     } 
+// }
+
 // --------------------- Metabox - Evento - Tema ------------------------------
 function add_tema_event_metaboxes(){
     add_meta_box(

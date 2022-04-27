@@ -60,7 +60,13 @@
                 <div class="collapse navbar-collapse" id="main-navbar">
 
                     <?php
-                        $args = array('menu_id' => 'main-nav','menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0', 'menu' => 'principal', 'container' => false);
+                        $args = array(
+                            'menu_id' => 'main-nav',
+                            'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
+                            'menu' => 'principal',
+                            'container' => false,
+                            'depth'=>2,
+                            'add_li_class'  => 'nav-item');
                         wp_nav_menu($args);
                     ?>
     

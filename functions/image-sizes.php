@@ -20,4 +20,8 @@ function register_image_sizes(){
     add_image_size( 'medium-wide', 600, 300, true );
     add_image_size( 'large-wide', 1140, 600, true );
 
+    add_image_size( 'small-vertical-rectangle', 125, 250, true );
+    add_image_size( 'medium-vertical-rectangle', 250, 500, true );
+    add_image_size( 'large-vertical-rectangle', 375, 750, true );
+
 }

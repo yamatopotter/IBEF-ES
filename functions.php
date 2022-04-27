@@ -23,10 +23,15 @@ add_theme_support('menus');
 function register_my_menu() {
   register_nav_menu('main-menu',__( 'Main Menu' ));
 }
-
 add_action( 'init', 'register_my_menu' );
 
-// Corrigindo LI do menu
+function add_additional_class_on_li($atts, $item, $args) {
+    $atts['class'] = 'nav-item';
+    return $atts;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+// // Corrigindo A do menu
 function add_menu_link_class($atts, $item, $args)
 {
     $atts['class'] = 'nav-link';
@@ -132,6 +137,12 @@ function returnCustomObject($name){
 
 function returnLinkFile($postId){
     $custom = get_post_meta($postId, 'midia_pdf', true);
+    $fieldData = $custom['url'];
+    return $fieldData;
+}
+
+function returnInformeFile($postId){
+    $custom = get_post_meta($postId, 'informe_pdf', true);
     $fieldData = $custom['url'];
     return $fieldData;
 }

@@ -916,6 +916,33 @@ function theme_customizer_settings( $wp_customize ) {
             'type'       => 'text'
         )
     ));
+
+     // Submenu do menu archive - Mídia
+     $wp_customize->add_section( 'archive_informe', array(
+        'title'      => __( 'Informe' ),
+        'panel'     => 'archives',
+        'priority'   => 0,
+    ));
+
+    // Título da archive Midia
+
+    $wp_customize->add_setting(
+        'titulo_archive_informe',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_archive_informe',
+        array(
+            'label'      => __( 'Título da Página', 'titulo_archive_informe_label' ),
+            'settings'   => 'titulo_archive_informe',
+            'section'    => 'archive_informe',
+            'type'       => 'text'
+        )
+    ));
     // $wp_customize->add_setting( 'cor_destaque',
     // array(
     //     'default' => '',
