@@ -25,19 +25,19 @@ function register_my_menu() {
 }
 add_action( 'init', 'register_my_menu' );
 
-function add_additional_class_on_li($atts, $item, $args) {
-    $atts['class'] = 'nav-item';
-    return $atts;
-}
-add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+// function add_additional_class_on_li($atts, $item, $args) {
+//     $atts['class'] = 'nav-item';
+//     return $atts;
+// }
+// add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
-// // Corrigindo A do menu
-function add_menu_link_class($atts, $item, $args)
-{
-    $atts['class'] = 'nav-link';
-    return $atts;
-}
-add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
+// // // Corrigindo A do menu
+// function add_menu_link_class($atts, $item, $args)
+// {
+//     $atts['class'] = 'nav-link';
+//     return $atts;
+// }
+// add_filter('nav_menu_link_attributes', 'add_menu_link_class', 1, 3);
 
 // Adiciona suporte ao thumbnail de posts e remove a exibição da barra de administração quando logado
 add_action('init', function () {
@@ -212,5 +212,13 @@ function customNavButtons(){
 
 add_filter('next_posts_link_attributes', 'customNavButtons');
 add_filter('previous_posts_link_attributes', 'customNavButtons');
+
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
 
 ?>
