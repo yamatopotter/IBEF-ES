@@ -323,53 +323,6 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Mídia ---------------------------
-    $wp_customize->add_section( 'midia', array(
-        'title'      => __( 'Mídia' ),
-        'priority'   => 0,
-        'panel'    => 'front-page'
-    ) );
-
-    //Título do bloco ultimas notícias ---------------
-    $wp_customize->add_setting(
-        'titulo_midia',
-        array(
-            'default' => '',
-            'transport'=>'refresh'
-        )
-    );
-    
-    $wp_customize->add_control( new WP_Customize_Control(
-        $wp_customize,
-        'titulo_midia',
-        array(
-            'label'      => __( 'Título do bloco de mídia', 'titulo_midia_label' ),
-            'settings'   => 'titulo_midia',
-            'section'    => 'midia',
-            'type'       => 'text'
-        )
-    ) );
-
-     //Subtítulo do bloco ultimas notícias ---------------
-     $wp_customize->add_setting(
-        'subtitulo_midia',
-        array(
-            'default' => '',
-            'transport'=>'refresh'
-        )
-    );
-    
-    $wp_customize->add_control( new WP_Customize_Control(
-        $wp_customize,
-        'subtitulo_midia',
-        array(
-            'label'      => __( 'Subtítulo do bloco de mídia', 'subtitulo_midia_label' ),
-            'settings'   => 'subtitulo_midia',
-            'section'    => 'midia',
-            'type'       => 'text'
-        )
-    ) );
-
     // Submenu do menu principal -------------------------- Eventos ---------------------------
     $wp_customize->add_section( 'eventos', array(
         'title'      => __( 'Eventos' ),
@@ -377,7 +330,7 @@ function theme_customizer_settings( $wp_customize ) {
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco ultimas notícias ---------------
+    //Título do bloco eventos ---------------
     $wp_customize->add_setting(
         'titulo_eventos',
         array(
@@ -397,7 +350,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-     //Subtítulo do bloco ultimas notícias ---------------
+     //Subtítulo do bloco eventos ---------------
      $wp_customize->add_setting(
         'subtitulo_eventos',
         array(
@@ -413,6 +366,53 @@ function theme_customizer_settings( $wp_customize ) {
             'label'      => __( 'Subtítulo do bloco de eventos', 'subtitulo_eventos_label' ),
             'settings'   => 'subtitulo_eventos',
             'section'    => 'eventos',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Submenu do menu principal -------------------------- Mídia ---------------------------
+      $wp_customize->add_section( 'midia', array(
+        'title'      => __( 'Mídia' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
+
+    //Título do bloco mídia ---------------
+    $wp_customize->add_setting(
+        'titulo_midia',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_midia',
+        array(
+            'label'      => __( 'Título do bloco de mídia', 'titulo_midia_label' ),
+            'settings'   => 'titulo_midia',
+            'section'    => 'midia',
+            'type'       => 'text'
+        )
+    ) );
+
+     //Subtítulo do bloco mídia ---------------
+     $wp_customize->add_setting(
+        'subtitulo_midia',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'subtitulo_midia',
+        array(
+            'label'      => __( 'Subtítulo do bloco de mídia', 'subtitulo_midia_label' ),
+            'settings'   => 'subtitulo_midia',
+            'section'    => 'midia',
             'type'       => 'text'
         )
     ) );
@@ -444,7 +444,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Subtítulo do blocopodcast ---------------
+    //Subtítulo do bloco podcast ---------------
      $wp_customize->add_setting(
         'subtitulo_podcast',
         array(
@@ -698,7 +698,94 @@ function theme_customizer_settings( $wp_customize ) {
          )
      ) );
 
-    // Menu para configuração dos Archives
+    // Submenu do menu principal -------------------------- Footer ---------------------------
+     $wp_customize->add_section( 'footer', array(
+        'title'      => __( 'Rodapé' ),
+        'priority'   => 0,
+        'panel'    => 'front-page'
+    ) );
+
+    //Telefone de contato ---------------
+    $wp_customize->add_setting(
+        'telefone_contato',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'telefone_contato',
+        array(
+            'label'      => __( 'Telefone', 'telefone_contato_label' ),
+            'settings'   => 'telefone_contato',
+            'section'    => 'footer',
+            'type'       => 'text'
+        )
+    ) );
+
+    //Email de contato ---------------
+    $wp_customize->add_setting(
+        'email_contato',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'email_contato',
+        array(
+            'label'      => __( 'E-mail', 'email_contato_label' ),
+            'settings'   => 'email_contato',
+            'section'    => 'footer',
+            'type'       => 'text'
+        )
+    ) );
+    
+    //Endereço do Escritório ---------------
+    $wp_customize->add_setting(
+        'endereco_contato',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'endereco_contato',
+        array(
+            'label'      => __( 'Endereço', 'endereco_contato_label' ),
+            'settings'   => 'endereco_contato',
+            'section'    => 'footer',
+            'type'       => 'text'
+        )
+    ) );
+
+    //Código do Google Maps ---------------
+     $wp_customize->add_setting(
+        'iframe_maps',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'iframe_maps',
+        array(
+            'label'      => __( 'Código do iframe do Google Maps', 'iframe_maps_label' ),
+            'settings'   => 'iframe_maps',
+            'section'    => 'footer',
+            'type'       => 'textarea'
+        )
+    ) );
+
+    //------------------------------------------ Menu para configuração dos Archives---------------------------------------
     $wp_customize->add_panel( 'archives', array(
         'priority'   => 3,
         'capability'     => 'edit_theme_options',
@@ -892,7 +979,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Submenu do menu archive - Diretoria
     $wp_customize->add_section( 'archive_diretoria', array(
-        'title'      => __( 'Galerias de Fotos' ),
+        'title'      => __( 'Página da Diretoria' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));

@@ -7,23 +7,23 @@
                 <div class="col-4">
                     <i class="bi-phone"></i>
                     <p>Telefone</p>
-                    <a href="telefone">+55 (27) 99864-1411</a>
+                    <a href="tel:<?php returnThemeObject('telefone_contato'); ?>"><?php returnThemeObject('telefone_contato'); ?></a>
                 </div>
                 <div class="col-4">
                     <i class="bi-envelope"></i>
                     <p>E-mail</p>
-                    <a href="email">ibefes@ibefes.org.br</a>
+                    <a href="mailto:<?php returnThemeObject('email_contato'); ?>"><?php returnThemeObject('email_contato'); ?></a>
                 </div>
                 <div class="col-4">
                     <i class="bi-pin-map"></i>
                     <p>Local</p>
-                    <a href="endereço">R. João da Cruz, 25 – 4º Andar – Praia do Canto, Vitória – ES</a>
+                    <a href="https://maps.google.com/maps/<?php returnThemeObject('endereco_contato'); ?>" target=_blank><?php returnThemeObject('endereco_contato'); ?></a>
                 </div>
             </div>
 
             </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d935.5249127000653!2d-40.291654!3d-20.296142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x947a6d669fd60662!2sNaCapital%20Escrit%C3%B3rios%20%26%20Coworking!5e0!3m2!1spt-BR!2sbr!4v1648217561816!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map"></iframe>
+            <?php returnThemeObject('iframe_maps'); ?>
 
         </section>
     </main>

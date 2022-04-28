@@ -3,7 +3,16 @@
 
         <article class="card">
             <div class="calendar">
-                <span class="day">
+                <?php
+                    $date = date("d-m-Y");
+                    $dateEvent = returnFullDateEvent($postId);
+
+                    if($date > $dateEvent):
+                ?>
+                    <span class="day past-event">
+                <?php else: ?>
+                    <span class="day">
+                <?php endif; ?>
                     <?php echo returnDateEvent($postId) ?>
                 </span>
                 <span class="month"><?php echo returnMonthEvent($postId) ?></span>

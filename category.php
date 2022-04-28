@@ -1,31 +1,35 @@
-<?php
-    // add header
-    get_header();
+<?php 
+    get_header(); 
+
+    global $wp_query; 
+    $curauth = $wp_query->get_queried_object();
+    $cat = $curauth -> term_id;
     $news_query = new WP_Query(array(
         'post_type' => 'noticias',
+        'cat' => $cat,
         'orderby' => 'publish_date',
         'order' => 'DESC',
         'posts_per_page' => get_theme_mod('quantidade_posts_noticias', 6),
-        'paged' => get_query_var('paged') ? get_query_var('paged') : 1));
+        'paged' => get_query_var('paged') ? get_query_var('paged') : 1));    
 ?>
 
-    <main>
+<main>
 
         <section class="post-title">
 
             <div class="container">
 
-                <h1><?php echo get_theme_mod('titulo_archive_noticias', 'Notícias'); ?></h1>
+                <h1><?php single_cat_title();  ?></h1>
 
             </div>
 
         </section>
-
+ 
         <section class="post-list">
             
             <div class="container">
 
-            <?php require_once('list-noticias-row.php'); ?>
+                <?php require_once('list-noticias-row.php'); ?>
 
             </div>
 

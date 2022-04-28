@@ -22,7 +22,7 @@
 
         </section>
 
-        <section class="event-list">
+        <section class="event-list informe">
 
             <div class="container">
 
@@ -32,8 +32,8 @@
 
                     <div class="col-3 d-flex align-items-strech">
 
-                        <article class="card">
-                            <span class="dashicons dashicons-info-outline"></span>
+                        <article>
+                            <i class="bi bi-journal"></i>
                             <h1><a href="<?php echo returnInformeFile($postId); ?>" target="_blank"><?php the_title(); ?></a></h1>    
                             <a href="<?php echo returnInformeFile($postId); ?>" target="_blank" class="btn link">Veja o informe <i class="bi bi-arrow-right"></i></a>   
                         </article>

@@ -148,7 +148,7 @@
                 </div>
 
                 <div class="row button-more">
-                    <a href="<?php echo get_post_type_archive_link('midia'); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
+                    <a href="<?php echo get_post_type_archive_link('midia'); ?>" class="btn link">Ver outras presenças <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </section>

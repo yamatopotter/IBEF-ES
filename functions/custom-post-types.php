@@ -636,7 +636,7 @@ function diretor_category() {
 		'update_item'       => __( 'Atualizar diretor', 'textdomain' ),
 		'add_new_item'      => __( 'Adicionar nova área', 'textdomain' ),
 		'new_item_name'     => __( 'New diretor Name', 'textdomain' ),
-		'menu_name'         => __( 'Diretor', 'textdomain' ),
+		'menu_name'         => __( 'Setores da Diretoria', 'textdomain' ),
 	);
 	$args = array(
 		'labels' => $labels,

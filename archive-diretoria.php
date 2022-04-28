@@ -19,7 +19,7 @@
 
                         <h2 class="subtitle"><?php print_r($categoria->name); ?></h2>
 
-                        <div class="row">
+                        <div class="row d-flex justify-content-center">
 
                             <?php $diretoria_query = new WP_Query(array(
                                 'post_type' => 'diretoria',
@@ -35,7 +35,7 @@
     
 
                             <?php while($diretoria_query->have_posts()): $diretoria_query->the_post(); $postId = $diretoria_query->post->ID;?>
-                            <div class="col-3 board-data">
+                            <div class="col-3  board-data">
         
                                 <?php if(get_the_thumbnail()): ?>
                                     <img class="board-pic" src="<?php the_thumbnail('medium-square'); ?>">

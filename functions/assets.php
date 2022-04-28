@@ -22,7 +22,7 @@ function register_assets() {
 // Inserção dos scripts na página
 function enqueue_site_assets() {
     wp_enqueue_script('bootstrap');
-    wp_enqueue_script('main');
+    wp_enqueue_script('main', '', array(), '1.0', true);
     wp_enqueue_script('lightGallery');
     // wp_enqueue_script('lightGallery-zoom-function');
     wp_enqueue_script('lightGallery-thumbnail-function');
