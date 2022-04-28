@@ -1,7 +1,10 @@
 <?php
 
 function register_post_types(){
-    // Notícias
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo notícias                         */
+    /* -------------------------------------------------------------------------- */
+
     register_post_type('noticias', array(
         'labels' => array(
             'name' => __('Notícia'),
@@ -30,7 +33,10 @@ function register_post_types(){
         )
     ));
 
-    // Mídia
+    /* -------------------------------------------------------------------------- */
+    /*                           Registro do tipo Mídia                           */
+    /* -------------------------------------------------------------------------- */
+
     register_post_type('midia', array(
         'labels' => array(
             'name' => __('Mídia'),
@@ -64,7 +70,10 @@ function register_post_types(){
         )
     ));
 
-    // Informe
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo Informe                          */
+    /* -------------------------------------------------------------------------- */
+    
     register_post_type('informe', array(
         'labels' => array(
             'name' => __('Informe'),
@@ -335,7 +344,9 @@ function post_meta_box_local_events_post(){
     echo "<input type=\"text\" name=\"_local_event\" value=\"".$fieldData."\" placeholder=\"Local do Evento\"> ";
 }
 
-// Metabox de teste
+/* -------------------------------------------------------------------------- */
+/*                    Metabox de teste para post especifico                   */
+/* -------------------------------------------------------------------------- */
 
 // function add_test_metaboxes(){
 //     add_meta_box(
