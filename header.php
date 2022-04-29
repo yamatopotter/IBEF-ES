@@ -51,7 +51,7 @@
 
         <img src='<?php returnThemeObject('logo_menu'); ?>' class="logo-header" id="logo-header">
 
-        <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation" id="main-menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" id="main-menu">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-list" aria-controls="menu-list" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
                     <span class="navbar-toggler-icon"></span>

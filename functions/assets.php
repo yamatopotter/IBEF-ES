@@ -10,7 +10,7 @@ function register_assets() {
     wp_register_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
 
     // main.js
-    wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js');
+    wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0', true);
 
     // lightGallery
     wp_register_style('lightGallery', get_template_directory_uri() . '/assets/plugins/lightGallery/css/lightgallery-bundle.min.css');
@@ -22,7 +22,7 @@ function register_assets() {
 // Inserção dos scripts na página
 function enqueue_site_assets() {
     wp_enqueue_script('bootstrap');
-    wp_enqueue_script('main', '', array(), '1.0', true);
+    wp_enqueue_script('main');
     wp_enqueue_script('lightGallery');
     // wp_enqueue_script('lightGallery-zoom-function');
     wp_enqueue_script('lightGallery-thumbnail-function');

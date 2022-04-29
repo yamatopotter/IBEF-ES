@@ -30,7 +30,7 @@
 
                     <?php while($informe_query->have_posts()): $informe_query->the_post(); $postId = $informe_query->post->ID;?>
 
-                    <div class="col-3 d-flex align-items-strech">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex align-items-strech">
 
                         <article>
                             <i class="bi bi-journal"></i>

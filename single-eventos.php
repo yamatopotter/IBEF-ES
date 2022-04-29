@@ -26,7 +26,7 @@
 
                 <div class="row event-card-list">
 
-                    <div class="col-6">
+                    <div class="col-12 order-2 col-lg-6">
                         <h2>Data</h2>
                         <p><?php echo returnFullDateEvent(get_the_ID()); ?></p>
 
@@ -44,7 +44,7 @@
                         <a href="<?php echo returnCustomObject('_event_link'); ?>" class="btn-link" target=_blank>Clique aqui para se inscrever no evento <i class="bi bi-arrow-up-right"></i></a>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 order-lg-2">
                         <?php if(get_the_thumbnail()): ?>
                                 <img class="event-pic" src="<?php the_thumbnail('large-rectangle') ?>">
                         <?php endif; ?>

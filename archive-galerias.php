@@ -29,7 +29,7 @@
 
                     <?php while($gallery_query->have_posts()): $gallery_query->the_post(); ?>
 
-                    <div class="col-3 d-flex align-items-strech">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex align-items-strech">
 
                         <article class="card">
 

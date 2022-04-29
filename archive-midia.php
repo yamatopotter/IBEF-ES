@@ -30,7 +30,7 @@
 
                     <?php while($midia_query->have_posts()): $midia_query->the_post(); $postId = $midia_query->post->ID;?>
 
-                    <div class="col-3 d-flex align-items-strech">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex align-items-strech">
 
                         <article class="card">
                             <?php if(get_the_thumbnail()): ?>

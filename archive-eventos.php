@@ -29,7 +29,7 @@
                 <div class="row event-card-list calendar-list">
 
                 <?php while($events_query->have_posts()): $events_query->the_post(); $postId = $events_query->post->ID ?>
-                    <div class="col-3 d-flex align-items-strech">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex align-items-strech">
 
                         <article class="card">
 
