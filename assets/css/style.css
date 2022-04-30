@@ -82,6 +82,12 @@ section .title::before {
   margin-top: 40px;
 }
 
+@media (max-width: 991px) {
+  .button-more {
+    margin-top: 0;
+  }
+}
+
 .btn-link {
   display: inline-block;
   text-decoration: none;
