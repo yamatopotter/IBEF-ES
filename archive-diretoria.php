@@ -2,11 +2,11 @@
 <?php $categorias = get_terms('diretor');?>
     <main>
 
-        <section class="intern-title">
+        <section class="post-title">
 
             <div class="container">
 
-                <h1><?php echo get_theme_mod('titulo_archive_diretoria', 'Diretoria'); ?></h1>
+                <h1 class="title"><?php echo get_theme_mod('titulo_archive_diretoria', 'Diretoria'); ?></h1>
 
             </div>
 

@@ -15,7 +15,7 @@
 
             <div class="container">
 
-                <h1><?php echo get_theme_mod('titulo_archive_noticias', 'Notícias'); ?></h1>
+                <h1 class="title"><?php echo get_theme_mod('titulo_archive_noticias', 'Notícias'); ?></h1>
 
             </div>
 

@@ -151,13 +151,13 @@ function register_post_types(){
             'add_new_item' => __('Adicionar novo membro'),
             'edit_item' => __('Editar membro'),
             'new_item' => __('Novo membro'),
-            'all_items' => __('Todas os membros'),
+            'all_items' => __('Todos os membros'),
             'view_item' => __('Exibir membro'),
             'view_items' => __('Exibir membros'),
             'search_items' => __('Buscar membros'),
             'not_found' => __('Nenhum membro encontrado'),
             'not_found_in_trash' => __('Nenhum membro encontrado na lixeira'),
-            'archives' => ('Histórico de membros'),
+            'archives' => ('Todos de Membros'),
             'parent_item_colon' => '',
             'menu_name' => 'Diretoria'
         ),
@@ -560,13 +560,13 @@ add_action('add_meta_boxes', 'add_informe_pdf_meta_boxes');
 function post_meta_box_informe_pdf_post() {  
     global $post;
     $custom = get_post_meta($post->ID, 'informe_pdf', true);
-    $fieldData = $custom['url'];
     wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
     $html = '<p class="description">';
     $html .= 'Upload do informe em PDF';
     $html .= '</p>';
     $html .= '<input type="file" id="informe_pdf" name="informe_pdf" value="" size="40" accept=".pdf">';
-    if(!empty($fieldData)){
+    if(!empty($custom['url'])){
+        $fieldData = $custom['url'];
         $html .= '<p class="alert">';
         $html .= "Já existe um arquivo para esse informe. Clique <a href='$fieldData' target='_blank'>aqui</a> para visualizar";
         $html .= '</p>';

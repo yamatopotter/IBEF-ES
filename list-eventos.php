@@ -6,8 +6,8 @@
                 <?php
                     $date = date("d-m-Y");
                     $dateEvent = returnFullDateEvent($postId);
-
-                    if($date > $dateEvent):
+                    
+                    if(strtotime($date) > strtotime($dateEvent)):
                 ?>
                     <span class="day past-event">
                 <?php else: ?>

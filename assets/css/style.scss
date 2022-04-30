@@ -53,13 +53,14 @@ section{
         }     
     }
 
-    @media (max-width: 992px){
+    @media (max-width: 719px){
         .title, .title-intro{
             font-size: 2rem;
             margin-bottom: 20px;
             text-align: center;
         }
         .title{
+            margin-bottom: 0px;
             &::before, &::after{
                 content:'';
                 display: none;
@@ -328,7 +329,7 @@ header{
         
     }
 
-    .col-4{
+    .col-12, .col-lg-4{
         text-align: center;
 
         i{
@@ -339,6 +340,10 @@ header{
         p{
             font-size: 1.2rem;
         }
+    }
+
+    .col-12{
+        margin-bottom:20px;
     }
 
     a{
@@ -531,6 +536,12 @@ footer{
         width: 100%;
     }
 
+    @media(max-width:719px){
+        .main-pic{
+            margin-bottom: 20px
+        }
+    }
+
     .btn-link{
         padding: 0;
         display: block;
@@ -558,6 +569,9 @@ footer{
 
 .event-pic{
     width:100%;
+    @media(max-width:991px){
+        margin-bottom: 20px;
+    }
 }
 
 .event-data{

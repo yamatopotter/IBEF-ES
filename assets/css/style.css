@@ -50,11 +50,14 @@ section .title::before {
   background-color: #328698;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 719px) {
   section .title, section .title-intro {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
+  }
+  section .title {
+    margin-bottom: 0px;
   }
   section .title::before, section .title::after {
     content: '';
@@ -312,18 +315,22 @@ header .navbar-color {
   margin-top: 20px;
 }
 
-.contact .col-4 {
+.contact .col-12, .contact .col-lg-4 {
   text-align: center;
 }
 
-.contact .col-4 i {
+.contact .col-12 i, .contact .col-lg-4 i {
   font-size: 2rem;
   margin-bottom: 10px;
   display: block;
 }
 
-.contact .col-4 p {
+.contact .col-12 p, .contact .col-lg-4 p {
   font-size: 1.2rem;
+}
+
+.contact .col-12 {
+  margin-bottom: 20px;
 }
 
 .contact a {
@@ -535,6 +542,12 @@ footer {
   width: 100%;
 }
 
+@media (max-width: 719px) {
+  .post-list .main-pic {
+    margin-bottom: 20px;
+  }
+}
+
 .post-list .btn-link {
   padding: 0;
   display: block;
@@ -562,6 +575,12 @@ footer {
 
 .event-pic {
   width: 100%;
+}
+
+@media (max-width: 991px) {
+  .event-pic {
+    margin-bottom: 20px;
+  }
 }
 
 .event-data .btn-link {

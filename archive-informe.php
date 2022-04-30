@@ -16,7 +16,7 @@
 
             <div class="container">
 
-                <h1><?php echo get_theme_mod('titulo_archive_informe', 'IBEF Informa'); ?></h1>
+                <h1 class="title"><?php echo get_theme_mod('titulo_archive_informe', 'IBEF Informa'); ?></h1>
 
             </div>
 

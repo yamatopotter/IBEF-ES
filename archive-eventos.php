@@ -16,7 +16,7 @@
 
             <div class="container">
 
-                <h1><?php echo get_theme_mod('titulo_archive_eventos'); ?></h1>
+                <h1 class="title"><?php echo get_theme_mod('titulo_archive_eventos'); ?></h1>
 
             </div>
 
@@ -38,7 +38,7 @@
                                     $date = date("d-m-Y");
                                     $dateEvent = returnFullDateEvent($postId);
 
-                                    if($date > $dateEvent):
+                                    if(strtotime($date) > strtotime($dateEvent)):
                                 ?>
                                     <span class="day past-event">
                                 <?php else: ?>

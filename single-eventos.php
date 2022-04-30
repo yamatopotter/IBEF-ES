@@ -14,7 +14,7 @@
                     Evento
                 </span>
 
-                <h1><?php the_title();?></h1>
+                <h1 class="title"><?php the_title();?></h1>
 
             </div>
 
