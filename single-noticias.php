@@ -36,7 +36,11 @@
 
             <div class="container">
 
-                <img src="./assets/img/post-image.jpg" alt="" class="main-pic">
+                <?php if(get_the_thumbnail()): ?>
+                    <a href="<?php the_permalink(); ?>" target="_self">
+                        <img class="main-pic" src="<?php the_thumbnail('large-rectangle') ?>">
+                    </a>
+                <?php endif ?>
                 
                 <div class="post-text">
                     

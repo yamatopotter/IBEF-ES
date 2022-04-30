@@ -35,7 +35,7 @@
     
 
                             <?php while($diretoria_query->have_posts()): $diretoria_query->the_post(); $postId = $diretoria_query->post->ID;?>
-                            <div class="col-3  board-data">
+                            <div class="col-6 col-md-4 col-lg-3  board-data">
         
                                 <?php if(get_the_thumbnail()): ?>
                                     <img class="board-pic" src="<?php the_thumbnail('medium-square'); ?>">

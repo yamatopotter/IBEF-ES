@@ -33,27 +33,6 @@
 
             <?php the_content(); ?>
 
-                <!-- <div id="lightgallery" class="lightgallery">
-                    <a href="./assets/img/gallery/1.jpg">
-                        <img alt="img1" src="./assets/img/gallery/1.jpg" class="thumbnail"/>
-                    </a>
-                    <a href="./assets/img/gallery/2.jpg">
-                        <img alt="img2" src="./assets/img/gallery/2.jpg" class="thumbnail"/>
-                    </a>
-                    <a href="./assets/img/gallery/3.jpg">
-                        <img alt="img2" src="./assets/img/gallery/3.jpg" class="thumbnail"/>
-                    </a>
-                    <a href="./assets/img/gallery/4.jpg">
-                        <img alt="img2" src="./assets/img/gallery/4.jpg" class="thumbnail"/>
-                    </a>
-                    <a href="./assets/img/gallery/5.jpg">
-                        <img alt="img2" src="./assets/img/gallery/5.jpg" class="thumbnail"/>
-                    </a>
-                    <a href="./assets/img/gallery/6.jpg">
-                        <img alt="img2" src="./assets/img/gallery/6.jpg" class="thumbnail"/>
-                    </a>
-                </div> -->
-
             </div>
             
         </section>
