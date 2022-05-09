@@ -53,7 +53,7 @@ function register_post_types(){
             'not_found_in_trash' => __('Nenhuma mídia encontrado na lixeira'),
             'archives' => ('Histórico de mídias'),
             'parent_item_colon' => '',
-            'menu_name' => 'Mídia'
+            'menu_name' => 'IBEF na Mídia'
         ),
         'public' => true,
         'menu_icon' => 'dashicons-id-alt',

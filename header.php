@@ -49,7 +49,7 @@
 <body class="site">
     <header>
 
-        <img src='<?php returnThemeObject('logo_menu'); ?>' class="logo-header" id="logo-header">
+        <a href="<?php echo home_url(); ?>"><img src='<?php returnThemeObject('logo_menu'); ?>' class="logo-header" id="logo-header"></a>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" id="main-menu">
             <div class="container">
@@ -61,7 +61,7 @@
                         'theme_location'    => 'main-menu',
                         'depth'             => 2,
                         'container'         => 'div',
-                        'container_class'   => 'collapse navbar-collapse',
+                        'container_class'   => 'collapse navbar-collapse justify-content-lg-center',
                         'container_id'      => 'menu-list',
                         'menu_class'        => 'nav navbar-nav',
                         'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',

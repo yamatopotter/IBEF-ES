@@ -163,7 +163,7 @@
             </div>
         </section>
 
-        <section class="members">
+        <section class="members" id="mantenedores">
             <div class="container">
 
                 <h1 class="title"><?php returnThemeObject('titulo_mantenedores'); ?></h1>

@@ -41,9 +41,9 @@
                                     <img class="board-pic" src="<?php the_thumbnail('medium-square'); ?>">
                                 <?php endif; ?>
         
-                                <span class="role"><?php echo returnCustomObject('_cargo_diretoria'); ?></span>
-        
                                 <span class="name-person"><?php the_title(); ?></span>
+
+                                <span class="role"><?php echo returnCustomObject('_cargo_diretoria'); ?></span>
         
                             </div>
                             <?php endwhile?>

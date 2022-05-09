@@ -427,6 +427,7 @@ footer {
 
 .board-specified .board-data .name-person {
   font-weight: bold;
+  text-align: center;
 }
 
 .board-specified .board-data:hover {
@@ -437,6 +438,7 @@ footer {
   width: 180px;
   height: auto;
   border-radius: 50%;
+  border: 2px solid #13175E;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
