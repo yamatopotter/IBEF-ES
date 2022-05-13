@@ -636,7 +636,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Categoria a ser listada na área de diamantes
+    // Categoria a ser listada na área de senior
 
      $wp_customize->add_setting( 'categoria_bloco_senior',
      array(
@@ -650,6 +650,48 @@ function theme_customizer_settings( $wp_customize ) {
          array(
              'label'      => __( 'Categoria a ser listada no bloco de mantenedores sêniors', 'categoria_bloco_senior_label' ),
              'settings'   => 'categoria_bloco_senior',
+             'section'    => 'mantenedores',
+             'type'       => 'select',
+             'choices' => returnCustomTerm('mantenedor')
+         )
+     ) );
+
+    // Mantenedor Pleno
+
+    //Título da categoria pleno ---------------
+    $wp_customize->add_setting(
+        'titulo_categoria_pleno',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+        )
+    );
+    
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_categoria_pleno',
+        array(
+            'label'      => __( 'Título da categoria pleno', 'titulo_categoria_pleno_label' ),
+            'settings'   => 'titulo_categoria_pleno',
+            'section'    => 'mantenedores',
+            'type'       => 'text'
+        )
+    ) );
+
+    // Categoria a ser listada na área de senior
+
+     $wp_customize->add_setting( 'categoria_bloco_pleno',
+     array(
+         'default' => '',
+         'transport' => 'refresh',
+     ));
+ 
+     $wp_customize->add_control(  new WP_Customize_Control(
+         $wp_customize,
+         'categoria_bloco_pleno',
+         array(
+             'label'      => __( 'Categoria a ser listada no bloco de mantenedores pleno', 'categoria_bloco_pleno_label' ),
+             'settings'   => 'categoria_bloco_pleno',
              'section'    => 'mantenedores',
              'type'       => 'select',
              'choices' => returnCustomTerm('mantenedor')

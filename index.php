@@ -47,6 +47,15 @@
                 'terms' => get_theme_mod('categoria_bloco_senior'),
             )
     )));
+    $mantenedor_pleno_query = new WP_Query(array(
+        'post_type' => 'mantenedor', 
+        'tax_query' => array(
+            array (
+                'taxonomy' => 'mantenedor',
+                'field' => 'slug',
+                'terms' => get_theme_mod('categoria_bloco_pleno'),
+            )
+    )));
     $mantenedor_apoiador_query = new WP_Query(array(
         'post_type' => 'mantenedor', 
         'tax_query' => array(
@@ -120,24 +129,6 @@
         <section class="latest-news">
             <div class="container">
                 
-                <h1 class="title"><?php returnThemeObject('titulo_ultimas_noticias'); ?></h1>
-                <p class="subtitle"><?php returnThemeObject('subtitulo_ultimas_noticias'); ?></p>
-    
-                <div class="row">
-    
-                    <?php require_once('list-noticias.php'); ?>
-
-                </div>
-
-                <div class="row button-more">
-                    <a href="<?php echo get_post_type_archive_link( 'noticias' ); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section class="latest-news">
-            <div class="container">
-                
                 <h1 class="title"><?php returnThemeObject('titulo_midia'); ?></h1>
                 <p class="subtitle"><?php returnThemeObject('subtitulo_midia'); ?></p>
     
@@ -160,6 +151,24 @@
 
                 <?php returnThemeObject('iframe_podcast'); ?>
 
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <div class="container">
+                
+                <h1 class="title"><?php returnThemeObject('titulo_ultimas_noticias'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_ultimas_noticias'); ?></p>
+    
+                <div class="row">
+    
+                    <?php require_once('list-noticias.php'); ?>
+
+                </div>
+
+                <div class="row button-more">
+                    <a href="<?php echo get_post_type_archive_link( 'noticias' ); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
+                </div>
             </div>
         </section>
 
@@ -204,6 +213,19 @@
                         <?php  ?>
                     <?php endif; endwhile; ?>
                 </div>
+
+                <div class="row d-flex justify-content-center text-center member-list">
+                    <h3><?php returnThemeObject('titulo_categoria_pleno'); ?></h3>
+
+                    <?php while($mantenedor_pleno_query->have_posts()): $mantenedor_pleno_query->the_post(); $postId = $events_query->post->ID;?>
+                        <?php if(get_the_thumbnail()): ?>
+                            <a href="<?php echo returnCustomObject('_link_mantenedor'); ?>" target="_blank">
+                                <img class="mantenedor-pleno" src="<?php the_thumbnail('medium-rectangle') ?>">
+                            </a>
+                        <?php  ?>
+                    <?php endif; endwhile; ?>
+                </div>
+    
     
                 <div class="row d-flex justify-content-center text-center member-list">
                     <h3><?php returnThemeObject('titulo_categoria_apoiador'); ?></h3>

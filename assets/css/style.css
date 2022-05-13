@@ -262,6 +262,10 @@ header .navbar-color {
   max-width: 150px;
 }
 
+.members .mantenedor-pleno {
+  max-width: 125px;
+}
+
 .members .mantenedor-apoiador {
   max-width: 100px;
 }
