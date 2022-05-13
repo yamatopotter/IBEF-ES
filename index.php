@@ -96,24 +96,6 @@
             </div>
         </section>
 
-        <section class="latest-news">
-            <div class="container">
-                
-                <h1 class="title"><?php returnThemeObject('titulo_ultimas_noticias'); ?></h1>
-                <p class="subtitle"><?php returnThemeObject('subtitulo_ultimas_noticias'); ?></p>
-    
-                <div class="row">
-    
-                    <?php require_once('list-noticias.php'); ?>
-
-                </div>
-
-                <div class="row button-more">
-                    <a href="<?php echo get_post_type_archive_link( 'noticias' ); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
         <section class="events">
             <div class="container">
 
@@ -132,6 +114,24 @@
 
                 </div>
 
+            </div>
+        </section>
+
+        <section class="latest-news">
+            <div class="container">
+                
+                <h1 class="title"><?php returnThemeObject('titulo_ultimas_noticias'); ?></h1>
+                <p class="subtitle"><?php returnThemeObject('subtitulo_ultimas_noticias'); ?></p>
+    
+                <div class="row">
+    
+                    <?php require_once('list-noticias.php'); ?>
+
+                </div>
+
+                <div class="row button-more">
+                    <a href="<?php echo get_post_type_archive_link( 'noticias' ); ?>" class="btn link">Ver outras matérias <i class="bi bi-arrow-right"></i></a>
+                </div>
             </div>
         </section>
 

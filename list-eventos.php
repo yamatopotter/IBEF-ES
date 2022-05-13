@@ -23,7 +23,7 @@
                     <img class="news-pic" src="<?php the_thumbnail('medium-rectangle') ?>">
                 </a>
             <?php endif ?>
-            <h1><? the_title(); ?></h1>    
+            <h1><?php the_title(); ?></h1>    
             <a href="<?php the_permalink(); ?>" class="btn link">Ver Mais <i class="bi bi-arrow-right"></i></a>        
         </article>
 
