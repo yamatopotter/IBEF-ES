@@ -107,7 +107,10 @@ function register_post_types(){
         )
     ));
 
-    // Eventos
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo Eventos                          */
+    /* -------------------------------------------------------------------------- */
+
     register_post_type('eventos', array(
         'labels' => array(
             'name' => __('Eventos'),
@@ -141,7 +144,9 @@ function register_post_types(){
         )
     ));
 
-    // Diretoria
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo Diretoria                        */
+    /* -------------------------------------------------------------------------- */
 
     register_post_type('diretoria', array(
         'labels' => array(
@@ -178,7 +183,9 @@ function register_post_types(){
         )
     ));
 
-    // Mantenedores
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo Mantenedores                     */
+    /* -------------------------------------------------------------------------- */
 
     register_post_type('mantenedor', array(
         'labels' => array(
@@ -215,7 +222,9 @@ function register_post_types(){
         )
     ));
 
-     // Galeria de Fotos
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo Galerias                         */
+    /* -------------------------------------------------------------------------- */
      register_post_type('galerias', array(
         'labels' => array(
             'name' => __('Galeria de Fotos'),
@@ -237,6 +246,36 @@ function register_post_types(){
         'has_archive' => true,
         'hierarchical' => true,
         'rewrite' => array('slug' => 'fotos'),
+        'show_in_nav_menus' => true,
+        'supports' => array(
+            'title', 'editor', 'thumbnail'
+        )
+    ));
+
+    /* -------------------------------------------------------------------------- */
+    /*                          Registro do tipo Convênios                        */
+    /* -------------------------------------------------------------------------- */
+    register_post_type('convenios', array(
+        'labels' => array(
+            'name' => __('Convênios'),
+            'singular_name' => __('Convênio'),
+            'add_new' => __('Adicionar novo convênio'),
+            'add_new_item' => __('Adicionar novo convênio'),
+            'edit_item' => __('Editar convênio'),
+            'new_item' => __('Novo convênio'),
+            'all_items' => __('Todos os convênios'),
+            'view_item' => __('Exibir convênio'),
+            'search_items' => __('Buscar convênios'),
+            'not_found' => __('Nenhum convênio encontrado'),
+            'not_found_in_trash' => __('Nenhum convênio encontrado na Lixeira'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Convênios'
+        ),
+        'public' => true,
+        'menu_icon' => 'dashicons-star-empty',
+        'has_archive' => true,
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'convenio'),
         'show_in_nav_menus' => true,
         'supports' => array(
             'title', 'editor', 'thumbnail'
