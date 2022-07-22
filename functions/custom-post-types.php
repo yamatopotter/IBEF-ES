@@ -672,6 +672,39 @@ function mantenedor_category() {
 }
 add_action( 'init', 'mantenedor_category' );
 
+// -----------------------------Categoria para os tipos de convênios ----------------------
+function convenio_category() {	
+	$labels = array(
+		'name'              => _x( 'Tipo de Convênio', 'taxonomy general name', 'textdomain' ),
+		'singular_name'     => _x( 'Convênios', 'taxonomy singular name', 'textdomain' ),
+		'search_items'      => __( 'Procurar convênios', 'textdomain' ),
+		'all_items'         => __( 'Todos os convênios', 'textdomain' ),
+		'parent_item'       => __( 'Parent convênio', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent convênio:', 'textdomain' ),
+		'edit_item'         => __( 'Editar convênio', 'textdomain' ),
+		'update_item'       => __( 'Atualizar convênio', 'textdomain' ),
+		'add_new_item'      => __( 'Adicionar tipo de convênio', 'textdomain' ),
+		'new_item_name'     => __( 'Novo tipo de convênio', 'textdomain' ),
+		'menu_name'         => __( 'Tipo de convênio', 'textdomain' ),
+	);
+	$args = array(
+		'labels' => $labels,
+		'description' => __( 'Tipo do Convênio', 'textdomain' ),
+		'hierarchical' => true,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_tagcloud' => true,
+		'show_in_quick_edit' => true,
+		'show_admin_column' => true,
+		'show_in_rest' => true,
+	);
+	register_taxonomy( 'convenio', array('convenios'), $args );
+}
+add_action( 'init', 'convenio_category' );
+
 // ----------------------------Categoria para os tipos de diretores -----------------------------
 function diretor_category() {
 
