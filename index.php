@@ -96,7 +96,7 @@
                     <div class="col-12 col-lg-6">
                         <p><?php returnThemeObject('texto_sobre_nos'); ?></p>
         
-                        <a href="<?php returnThemeObject('pagina_sobre_nos'); ?>" class="btn btn-link">Saiba mais <i class="bi bi-arrow-right"></i></a>
+                        <a href="<?= get_page_link(get_theme_mod('pagina_sobre_nos')); ?>" class="btn btn-link">Saiba mais <i class="bi bi-arrow-right"></i></a>
                     </div>
 
                 </div>

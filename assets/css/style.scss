@@ -712,3 +712,41 @@ footer{
         }
     }
 }
+
+// --------------------- CONVENIOS --------------------------
+
+.convenio-list{
+    .row{
+        margin-bottom: 40px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .convenio-title{
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &::before{
+            content:'';
+            width:40px;
+            height:2px;
+            background-color: $special-blue;
+        }   
+    }
+}
+
+// ---------------------- SINGLE CONVENIO -------------------
+
+.convenio-pic{
+    width:100%;
+    @media(max-width:991px){
+        margin-bottom: 20px;
+    }
+}
+
+.convenio-data{
+    .btn-link{
+        padding: 0px 10px 10px 0px;
+    }    
+}

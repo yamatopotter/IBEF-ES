@@ -17,7 +17,7 @@
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
     <!-- puxar logo para o meta tag -->
     <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/logo.png" />
-    <meta property="og:site_name" content="Coluna Resenhando" />
+    <meta property="og:site_name" content="IBEF ES" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?php echo get_the_title() ?>" />
     <meta property="og:url" content="<?php echo get_the_post_thumbnail_url() ?>" />

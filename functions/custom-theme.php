@@ -1,7 +1,9 @@
 <?php
 
 function theme_customizer_settings( $wp_customize ) {
-    // --------------------------- Global -----------------------------------------
+    /**
+     * Configurações Globais
+     */
 
     $wp_customize->add_section( 'global-config', array(
         'priority'   => 1,
@@ -30,7 +32,10 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // --------------------------- Página Inicial ---------------------------------
+    /**
+     * Configurações da página inicial
+     */
+
 
     // Sessão no menu principal
     $wp_customize->add_panel( 'front-page', array(
@@ -109,7 +114,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Checkbox para ver se vai adicionar o botão ou não
+    // Checkbox para ver se vai adicionar o botão da intro ou não
 
     $wp_customize->add_setting(
         'exibir_botao_intro',
@@ -130,7 +135,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
     
-    // Texto e link do botão
+    // Texto e link do botão da intro
     $wp_customize->add_setting(
         'link_botao_intro',
         array(
@@ -169,7 +174,10 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Sobre Nós ---------------------------
+    /**
+     * SUBMENU Página Principal -> Sobre nós
+     */
+
     $wp_customize->add_section( 'sobre_nos', array(
         'title'      => __( 'Sobre Nós' ),
         'priority'   => 0,
@@ -196,7 +204,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Título do bloco sobre nós ---------------
+    //Título do bloco sobre nós
     $wp_customize->add_setting(
         'titulo_sobre_nos',
         array(
@@ -216,7 +224,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Subtítulo do bloco sobre nós ---------------
+    //Subtítulo do bloco sobre nós
     $wp_customize->add_setting(
         'subtitulo_sobre_nos',
         array(
@@ -236,7 +244,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Texto do bloco sobre nós ------------------
+    // Texto do bloco sobre nós
     $wp_customize->add_setting(
         'texto_sobre_nos',
         array(
@@ -276,14 +284,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Ultimas Notícias ---------------------------
+    /**
+     * SUBMENU Página Principal -> Últimas notícias
+     */
     $wp_customize->add_section( 'ultimas_noticias', array(
         'title'      => __( 'Últimas Notícias' ),
         'priority'   => 0,
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco ultimas notícias ---------------
+    //Título do bloco ultimas notícias
     $wp_customize->add_setting(
         'titulo_ultimas_noticias',
         array(
@@ -303,7 +313,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-     //Subtítulo do bloco ultimas notícias ---------------
+     //Subtítulo do bloco ultimas notícias
      $wp_customize->add_setting(
         'subtitulo_ultimas_noticias',
         array(
@@ -323,14 +333,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Eventos ---------------------------
+    /**
+     *  SUBMENU Página Principal -> Eventos 
+     */
     $wp_customize->add_section( 'eventos', array(
         'title'      => __( 'Eventos' ),
         'priority'   => 0,
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco eventos ---------------
+    //Título do bloco eventos
     $wp_customize->add_setting(
         'titulo_eventos',
         array(
@@ -350,7 +362,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-     //Subtítulo do bloco eventos ---------------
+     //Subtítulo do bloco eventos
      $wp_customize->add_setting(
         'subtitulo_eventos',
         array(
@@ -370,14 +382,17 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Mídia ---------------------------
+   /**
+    * SUBMENU Página Principal -> Mídia
+    */
+
       $wp_customize->add_section( 'midia', array(
         'title'      => __( 'Mídia' ),
         'priority'   => 0,
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco mídia ---------------
+    //Título do bloco mídia
     $wp_customize->add_setting(
         'titulo_midia',
         array(
@@ -397,7 +412,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-     //Subtítulo do bloco mídia ---------------
+     //Subtítulo do bloco mídia
      $wp_customize->add_setting(
         'subtitulo_midia',
         array(
@@ -417,14 +432,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Podcast ---------------------------
+    /**
+     * SUBMENU Página Principal -> Podcast
+     */
     $wp_customize->add_section( 'podcast', array(
         'title'      => __( 'Podcast' ),
         'priority'   => 0,
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco podcast ---------------
+    //Título do bloco podcast 
     $wp_customize->add_setting(
         'titulo_podcast',
         array(
@@ -444,7 +461,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Subtítulo do bloco podcast ---------------
+    //Subtítulo do bloco podcast 
      $wp_customize->add_setting(
         'subtitulo_podcast',
         array(
@@ -464,7 +481,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Código do Spotify ---------------
+    //Código do Spotify 
       $wp_customize->add_setting(
         'iframe_podcast',
         array(
@@ -484,14 +501,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Submenu do menu principal -------------------------- Mantenedores ---------------------------
+    /**
+     * SUBMENU Página Principal -> Mantenedores
+     */
     $wp_customize->add_section( 'mantenedores', array(
         'title'      => __( 'Mantenedores' ),
         'priority'   => 0,
         'panel'    => 'front-page'
     ) );
 
-    //Título do bloco Mantenedores ---------------
+    //Título do bloco Mantenedores
     $wp_customize->add_setting(
         'titulo_mantenedores',
         array(
@@ -511,7 +530,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Subtítulo do bloco Mantenedores ---------------
+    //Subtítulo do bloco Mantenedores
      $wp_customize->add_setting(
         'subtitulo_mantenedores',
         array(
@@ -533,7 +552,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Mantenedor Diamante
 
-    //Título da categoria diamante ---------------
+    //Título da categoria diamante
     $wp_customize->add_setting(
         'titulo_categoria_diamante',
         array(
@@ -574,7 +593,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Mantenedor Master
 
-    //Título da categoria master ---------------
+    //Título da categoria master
     $wp_customize->add_setting(
         'titulo_categoria_master',
         array(
@@ -594,7 +613,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Categoria a ser listada na área de diamantes
+    // Categoria a ser listada na área de master
 
     $wp_customize->add_setting( 'categoria_bloco_master',
 	array(
@@ -616,7 +635,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Mantenedor Sênior
 
-    //Título da categoria senior ---------------
+    //Título da categoria senior 
      $wp_customize->add_setting(
         'titulo_categoria_senior',
         array(
@@ -658,7 +677,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Mantenedor Pleno
 
-    //Título da categoria pleno ---------------
+    //Título da categoria pleno 
     $wp_customize->add_setting(
         'titulo_categoria_pleno',
         array(
@@ -678,7 +697,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Categoria a ser listada na área de senior
+    // Categoria a ser listada na área de pleno
 
      $wp_customize->add_setting( 'categoria_bloco_pleno',
      array(
@@ -700,7 +719,7 @@ function theme_customizer_settings( $wp_customize ) {
 
     // Mantenedor Apoiador
     
-     //Título da categoria apoiador ---------------
+     //Título da categoria apoiador
     $wp_customize->add_setting(
         'titulo_categoria_apoiador',
         array(
@@ -720,7 +739,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    // Categoria a ser listada na área de diamantes
+    // Categoria a ser listada na área de apoiador
 
      $wp_customize->add_setting( 'categoria_bloco_apoiador',
      array(
@@ -740,14 +759,16 @@ function theme_customizer_settings( $wp_customize ) {
          )
      ) );
 
-    // Submenu do menu principal -------------------------- Footer ---------------------------
+    /**
+     * SUBMENU Página Principal -> Footer
+     */
      $wp_customize->add_section( 'footer', array(
         'title'      => __( 'Rodapé' ),
         'priority'   => 0,
         'panel'    => 'front-page'
     ) );
 
-    //Telefone de contato ---------------
+    //Telefone de contato
     $wp_customize->add_setting(
         'telefone_contato',
         array(
@@ -767,7 +788,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Email de contato ---------------
+    //Email de contato
     $wp_customize->add_setting(
         'email_contato',
         array(
@@ -787,7 +808,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
     
-    //Endereço do Escritório ---------------
+    //Endereço do Escritório
     $wp_customize->add_setting(
         'endereco_contato',
         array(
@@ -807,7 +828,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //Código do Google Maps ---------------
+    //Código do Google Maps
      $wp_customize->add_setting(
         'iframe_maps',
         array(
@@ -827,7 +848,9 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ) );
 
-    //------------------------------------------ Menu para configuração dos Archives---------------------------------------
+    /**
+     * Páginas Internas
+     */
     $wp_customize->add_panel( 'archives', array(
         'priority'   => 3,
         'capability'     => 'edit_theme_options',
@@ -836,14 +859,16 @@ function theme_customizer_settings( $wp_customize ) {
         'description'    => 'Altera configurações das páginas que listam conteúdos'
     ));
 
-    // Submenu do menu principal
+    /**
+     * SUBMENU Páginas Internas -> Notícias
+     */
     $wp_customize->add_section( 'archive_noticia', array(
         'title'      => __( 'Noticias' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));
 
-    // Título da intro 
+    // Título da archive de notícias 
 
     $wp_customize->add_setting(
         'titulo_archive_noticias',
@@ -863,6 +888,8 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
+    // Quantidade de post de notícias
+
     $wp_customize->add_setting(
         'quantidade_posts_noticias',
         array(
@@ -881,14 +908,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-     // Submenu do menu archive - Eventos
+     /**
+      * SUBMENU Páginas Internas -> Eventos
+      */
      $wp_customize->add_section( 'archive_eventos', array(
         'title'      => __( 'Eventos' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));
 
-    // Título da archive Eventos
+    // Título da archive de Eventos
 
     $wp_customize->add_setting(
         'titulo_archive_eventos',
@@ -908,7 +937,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-    // Quantidade de posts a ser exibido por páginação
+    // Quantidade de posts de eventos
     $wp_customize->add_setting(
         'quantidade_posts_eventos',
         array(
@@ -927,14 +956,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-    // Submenu do menu archive - Mídia
+    /**
+     * SUBMENU Páginas Internas -> Mídia
+     */
     $wp_customize->add_section( 'archive_midia', array(
         'title'      => __( 'Mídia' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));
 
-    // Título da archive Midia
+    // Título da archive de mídia
 
     $wp_customize->add_setting(
         'titulo_archive_midia',
@@ -954,7 +985,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-    // Quantidade de posts a ser exibido por páginação
+    // Quantidade de posts de mídia
     $wp_customize->add_setting(
         'quantidade_posts_midia',
         array(
@@ -973,14 +1004,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-    // Submenu do menu archive - Galerias de fotos
+    /**
+     * SUBMENU Páginas Internas -> Galerias de fotos
+     */
     $wp_customize->add_section( 'archive_fotos', array(
         'title'      => __( 'Galerias de Fotos' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));
 
-    // Título da archive Midia
+    // Título da archive de galerias
 
     $wp_customize->add_setting(
         'titulo_archive_fotos',
@@ -1000,7 +1033,7 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-    // Quantidade de posts a ser exibido por páginação
+    // Quantidade de posts de galerias
     $wp_customize->add_setting(
         'quantidade_posts_fotos',
         array(
@@ -1019,14 +1052,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-    // Submenu do menu archive - Diretoria
+    /**
+     * SUBMENU Páginas Internas -> Diretoria
+     */
     $wp_customize->add_section( 'archive_diretoria', array(
         'title'      => __( 'Página da Diretoria' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));
 
-    // Título da archive Diretoria
+    // Título da archive de Diretoria
 
     $wp_customize->add_setting(
         'titulo_archive_diretoria',
@@ -1046,14 +1081,16 @@ function theme_customizer_settings( $wp_customize ) {
         )
     ));
 
-     // Submenu do menu archive - Mídia
+    /**
+     * SUBMENU Páginas Internas -> Informes
+     */
      $wp_customize->add_section( 'archive_informe', array(
         'title'      => __( 'Informe' ),
         'panel'     => 'archives',
         'priority'   => 0,
     ));
 
-    // Título da archive Midia
+    // Título da archive de informes
 
     $wp_customize->add_setting(
         'titulo_archive_informe',
@@ -1072,31 +1109,35 @@ function theme_customizer_settings( $wp_customize ) {
             'type'       => 'text'
         )
     ));
-    // $wp_customize->add_setting( 'cor_destaque',
-    // array(
-    //     'default' => '',
-    //     'transport' => 'refresh',
-    // )
-    // );
-    
-    // $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'cor_destaque',
-    // array(
-    //     'label' => __( 'Cor de Destaque', 'cor_destaque_pick' ),
-    //     'section' => 'title_tagline',
-    //     'input_attrs' => array(
-    //         'label'      => __( 'Cor dos Títulos', 'mytheme' ),
-    //         'section'    => 'cores_section',
-    //         'settings'   => 'cor_destaque',
-    //     ),
-    // )
-    // ) );
-    
-    // $wp_customize->add_setting( 'cor_texto_header',
-    // array(
-    //     'default' => '',
-    //     'transport' => 'refresh',
-    // ) );
 
+    /**
+     * SUBMENU Páginas Internas -> Convênios
+     */
+    $wp_customize->add_section( 'archive_convenio', array(
+        'title'      => __( 'Convênios' ),
+        'panel'     => 'archives',
+        'priority'   => 0,
+    ));
+
+    // Título da archive de informes
+
+    $wp_customize->add_setting(
+        'titulo_archive_convenio',
+        array(
+            'default' => '',
+            'transport'=>'refresh'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control(
+        $wp_customize,
+        'titulo_archive_convenio',
+        array(
+            'label'      => __( 'Título da Página', 'titulo_archive_convenio_label' ),
+            'settings'   => 'titulo_archive_convenio',
+            'section'    => 'archive_convenio',
+            'type'       => 'text'
+        )
+    ));
 }
 
 function returnCustomTerm($nameTerm){
