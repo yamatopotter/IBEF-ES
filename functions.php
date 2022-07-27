@@ -226,4 +226,9 @@ function prefix_bs5_dropdown_data_attribute( $atts, $item, $args ) {
     return $atts;
 }
 
+function get_convenio_category($post_type){
+    $term = get_object_taxonomies($post_type);
+    return $term[0];
+}
+
 ?>
